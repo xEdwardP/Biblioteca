@@ -49,8 +49,17 @@
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Helpers.cs" />
     <Compile Include="Clases\Repository.cs" />
+    <Compile Include="Forms\FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,9 +83,44 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\" />
-    <Folder Include="Icons\" />
-    <Folder Include="Images\" />
+    <Folder Include="Forms\Authors\" />
+    <Folder Include="Forms\Auth\" />
+    <Folder Include="Forms\Books\" />
+    <Folder Include="Forms\Employees\" />
+    <Folder Include="Forms\Literary genres\" />
+    <Folder Include="Forms\Memberships\" />
+    <Folder Include="Forms\Members\" />
+    <Folder Include="Forms\Publishing\" />
+    <Folder Include="Forms\Requests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\actualizar-24px.png" />
+    <Content Include="Icons\autores-24px.png" />
+    <Content Include="Icons\BD-24px.png" />
+    <Content Include="Icons\borrar-24px.png" />
+    <Content Include="Icons\buscar-24px.png" />
+    <Content Include="Icons\calendario-24px.png" />
+    <Content Include="Icons\cancelar-24px.png" />
+    <Content Include="Icons\candado-24px.png" />
+    <Content Include="Icons\clean-16px.png" />
+    <Content Include="Icons\cleandgv-16px.png" />
+    <Content Include="Icons\editoriales-24px.png" />
+    <Content Include="Icons\empleados-24px.png" />
+    <Content Include="Icons\genero_libros-24px.png" />
+    <Content Include="Icons\guardar-24px.png" />
+    <Content Include="Icons\IconoApp-24px.png" />
+    <Content Include="Icons\icono_configuracion.ico" />
+    <Content Include="Icons\icono_login.ico" />
+    <Content Include="Icons\icono_sistema.ico" />
+    <Content Include="Icons\libros-24px.png" />
+    <Content Include="Icons\miembros-24px.png" />
+    <Content Include="Icons\nuevo-24px.png" />
+    <Content Include="Icons\ojo16px.png" />
+    <Content Include="Icons\salir-24px.png" />
+    <Content Include="Icons\search-16px.png" />
+    <Content Include="Icons\solicitudes-24px.png" />
+    <Content Include="Icons\Usuario-24px.png" />
+    <Content Include="Images\Home.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
