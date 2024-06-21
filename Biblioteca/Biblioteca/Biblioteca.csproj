@@ -49,16 +49,106 @@
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Helpers.cs" />
     <Compile Include="Clases\Repository.cs" />
+    <Compile Include="Forms\Authors\FrmAuthors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authors\FrmAuthors.Designer.cs">
+      <DependentUpon>FrmAuthors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Books\FrmBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Books\FrmBooks.Designer.cs">
+      <DependentUpon>FrmBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees\FrmEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees\FrmEmployees.Designer.cs">
+      <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Literary genres\FrmLiteraryGenres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Literary genres\FrmLiteraryGenres.Designer.cs">
+      <DependentUpon>FrmLiteraryGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Memberships\FrmMemberships.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Memberships\FrmMemberships.Designer.cs">
+      <DependentUpon>FrmMemberships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Members\FrmMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Members\FrmMembers.Designer.cs">
+      <DependentUpon>FrmMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Members\FrmSearchMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Members\FrmSearchMembers.Designer.cs">
+      <DependentUpon>FrmSearchMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Publishing\FrmPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Publishing\FrmPublisher.Designer.cs">
+      <DependentUpon>FrmPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Requests\FrmRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Requests\FrmRequests.Designer.cs">
+      <DependentUpon>FrmRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Requests\FrmSearchRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Requests\FrmSearchRequests.Designer.cs">
+      <DependentUpon>FrmSearchRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Authors\FrmAuthors.resx">
+      <DependentUpon>FrmAuthors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Books\FrmBooks.resx">
+      <DependentUpon>FrmBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees\FrmEmployees.resx">
+      <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Literary genres\FrmLiteraryGenres.resx">
+      <DependentUpon>FrmLiteraryGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Memberships\FrmMemberships.resx">
+      <DependentUpon>FrmMemberships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Members\FrmMembers.resx">
+      <DependentUpon>FrmMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Members\FrmSearchMembers.resx">
+      <DependentUpon>FrmSearchMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Publishing\FrmPublisher.resx">
+      <DependentUpon>FrmPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Requests\FrmRequests.resx">
+      <DependentUpon>FrmRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Requests\FrmSearchRequests.resx">
+      <DependentUpon>FrmSearchRequests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,15 +173,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Authors\" />
     <Folder Include="Forms\Auth\" />
-    <Folder Include="Forms\Books\" />
-    <Folder Include="Forms\Employees\" />
-    <Folder Include="Forms\Literary genres\" />
-    <Folder Include="Forms\Memberships\" />
-    <Folder Include="Forms\Members\" />
-    <Folder Include="Forms\Publishing\" />
-    <Folder Include="Forms\Requests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\actualizar-24px.png" />

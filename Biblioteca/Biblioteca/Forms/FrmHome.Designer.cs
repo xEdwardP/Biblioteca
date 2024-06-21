@@ -46,18 +46,18 @@
             this.TsConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.TsSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.BtnAutores = new System.Windows.Forms.ToolStripButton();
+            this.BtnAuthors = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnGeneros = new System.Windows.Forms.ToolStripButton();
+            this.BtnLiteraryGenres = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnEditoriales = new System.Windows.Forms.ToolStripButton();
+            this.BtnPublishers = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnLibros = new System.Windows.Forms.ToolStripButton();
+            this.BtnBooks = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnSalir = new System.Windows.Forms.ToolStripButton();
-            this.BtnMembresias = new System.Windows.Forms.ToolStripButton();
+            this.BtnExit = new System.Windows.Forms.ToolStripButton();
+            this.BtnMembers = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnSolicitudes = new System.Windows.Forms.ToolStripButton();
+            this.BtnRequests = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnGraduados = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
@@ -73,7 +73,7 @@
             this.TsSistema});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1087, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -183,128 +183,131 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnAutores,
+            this.BtnAuthors,
             this.toolStripSeparator1,
-            this.BtnGeneros,
+            this.BtnLiteraryGenres,
             this.toolStripSeparator2,
-            this.BtnEditoriales,
+            this.BtnPublishers,
             this.toolStripSeparator3,
-            this.BtnLibros,
+            this.BtnBooks,
             this.toolStripSeparator4,
-            this.BtnSalir,
-            this.BtnMembresias,
+            this.BtnExit,
+            this.BtnMembers,
             this.toolStripSeparator12,
-            this.BtnSolicitudes,
+            this.BtnRequests,
             this.toolStripSeparator13,
             this.BtnGraduados});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1087, 31);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // BtnAutores
+            // BtnAuthors
             // 
-            this.BtnAutores.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAutores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnAutores.Image = ((System.Drawing.Image)(resources.GetObject("BtnAutores.Image")));
-            this.BtnAutores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnAutores.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnAutores.Name = "BtnAutores";
-            this.BtnAutores.Size = new System.Drawing.Size(89, 28);
-            this.BtnAutores.Text = "AUTORES";
+            this.BtnAuthors.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAuthors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnAuthors.Image = ((System.Drawing.Image)(resources.GetObject("BtnAuthors.Image")));
+            this.BtnAuthors.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnAuthors.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAuthors.Name = "BtnAuthors";
+            this.BtnAuthors.Size = new System.Drawing.Size(89, 28);
+            this.BtnAuthors.Text = "AUTORES";
+            this.BtnAuthors.Click += new System.EventHandler(this.BtnAuthors_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnGeneros
+            // BtnLiteraryGenres
             // 
-            this.BtnGeneros.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGeneros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnGeneros.Image = ((System.Drawing.Image)(resources.GetObject("BtnGeneros.Image")));
-            this.BtnGeneros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnGeneros.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnGeneros.Name = "BtnGeneros";
-            this.BtnGeneros.Size = new System.Drawing.Size(159, 28);
-            this.BtnGeneros.Text = "GENEROS LITERARIOS";
+            this.BtnLiteraryGenres.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLiteraryGenres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnLiteraryGenres.Image = ((System.Drawing.Image)(resources.GetObject("BtnLiteraryGenres.Image")));
+            this.BtnLiteraryGenres.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnLiteraryGenres.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnLiteraryGenres.Name = "BtnLiteraryGenres";
+            this.BtnLiteraryGenres.Size = new System.Drawing.Size(159, 28);
+            this.BtnLiteraryGenres.Text = "GENEROS LITERARIOS";
+            this.BtnLiteraryGenres.Click += new System.EventHandler(this.BtnLiteraryGenres_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnEditoriales
+            // BtnPublishers
             // 
-            this.BtnEditoriales.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditoriales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnEditoriales.Image = ((System.Drawing.Image)(resources.GetObject("BtnEditoriales.Image")));
-            this.BtnEditoriales.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnEditoriales.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnEditoriales.Name = "BtnEditoriales";
-            this.BtnEditoriales.Size = new System.Drawing.Size(109, 28);
-            this.BtnEditoriales.Text = "EDITORIALES";
+            this.BtnPublishers.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPublishers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnPublishers.Image = ((System.Drawing.Image)(resources.GetObject("BtnPublishers.Image")));
+            this.BtnPublishers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnPublishers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnPublishers.Name = "BtnPublishers";
+            this.BtnPublishers.Size = new System.Drawing.Size(109, 28);
+            this.BtnPublishers.Text = "EDITORIALES";
+            this.BtnPublishers.Click += new System.EventHandler(this.BtnPublishers_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnLibros
+            // BtnBooks
             // 
-            this.BtnLibros.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLibros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnLibros.Image = ((System.Drawing.Image)(resources.GetObject("BtnLibros.Image")));
-            this.BtnLibros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnLibros.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnLibros.Name = "BtnLibros";
-            this.BtnLibros.Size = new System.Drawing.Size(77, 28);
-            this.BtnLibros.Text = "LIBROS";
+            this.BtnBooks.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnBooks.Image = ((System.Drawing.Image)(resources.GetObject("BtnBooks.Image")));
+            this.BtnBooks.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnBooks.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnBooks.Name = "BtnBooks";
+            this.BtnBooks.Size = new System.Drawing.Size(77, 28);
+            this.BtnBooks.Text = "LIBROS";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnSalir
+            // BtnExit
             // 
-            this.BtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(68, 28);
-            this.BtnSalir.Text = "SALIR";
+            this.BtnExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnExit.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnExit.Image = ((System.Drawing.Image)(resources.GetObject("BtnExit.Image")));
+            this.BtnExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(68, 28);
+            this.BtnExit.Text = "SALIR";
             // 
-            // BtnMembresias
+            // BtnMembers
             // 
-            this.BtnMembresias.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMembresias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnMembresias.Image = ((System.Drawing.Image)(resources.GetObject("BtnMembresias.Image")));
-            this.BtnMembresias.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnMembresias.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMembresias.Name = "BtnMembresias";
-            this.BtnMembresias.Size = new System.Drawing.Size(111, 28);
-            this.BtnMembresias.Text = "MEMBRESIAS";
+            this.BtnMembers.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnMembers.Image = ((System.Drawing.Image)(resources.GetObject("BtnMembers.Image")));
+            this.BtnMembers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnMembers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMembers.Name = "BtnMembers";
+            this.BtnMembers.Size = new System.Drawing.Size(111, 28);
+            this.BtnMembers.Text = "MEMBRESIAS";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnSolicitudes
+            // BtnRequests
             // 
-            this.BtnSolicitudes.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSolicitudes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnSolicitudes.Image = ((System.Drawing.Image)(resources.GetObject("BtnSolicitudes.Image")));
-            this.BtnSolicitudes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnSolicitudes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnSolicitudes.Name = "BtnSolicitudes";
-            this.BtnSolicitudes.Size = new System.Drawing.Size(110, 28);
-            this.BtnSolicitudes.Text = "SOLICITUDES";
+            this.BtnRequests.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRequests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnRequests.Image = ((System.Drawing.Image)(resources.GetObject("BtnRequests.Image")));
+            this.BtnRequests.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnRequests.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnRequests.Name = "BtnRequests";
+            this.BtnRequests.Size = new System.Drawing.Size(110, 28);
+            this.BtnRequests.Text = "SOLICITUDES";
             // 
             // toolStripSeparator13
             // 
@@ -328,7 +331,7 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1087, 450);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -341,6 +344,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmHome_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -369,18 +373,18 @@
         private System.Windows.Forms.ToolStripMenuItem TsConfiguracion;
         private System.Windows.Forms.ToolStripMenuItem TsSistema;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton BtnAutores;
+        private System.Windows.Forms.ToolStripButton BtnAuthors;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton BtnGeneros;
+        private System.Windows.Forms.ToolStripButton BtnLiteraryGenres;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton BtnEditoriales;
+        private System.Windows.Forms.ToolStripButton BtnPublishers;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton BtnLibros;
+        private System.Windows.Forms.ToolStripButton BtnBooks;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton BtnSalir;
-        private System.Windows.Forms.ToolStripButton BtnMembresias;
+        private System.Windows.Forms.ToolStripButton BtnExit;
+        private System.Windows.Forms.ToolStripButton BtnMembers;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-        private System.Windows.Forms.ToolStripButton BtnSolicitudes;
+        private System.Windows.Forms.ToolStripButton BtnRequests;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton BtnGraduados;
     }
