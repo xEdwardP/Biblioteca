@@ -55,6 +55,12 @@
     <Compile Include="Forms\Authors\FrmAuthors.Designer.cs">
       <DependentUpon>FrmAuthors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Auth\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Books\FrmBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <EmbeddedResource Include="Forms\Authors\FrmAuthors.resx">
       <DependentUpon>FrmAuthors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Books\FrmBooks.resx">
       <DependentUpon>FrmBooks.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,9 +181,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Auth\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Icons\actualizar-24px.png" />
     <Content Include="Icons\autores-24px.png" />
@@ -201,6 +208,7 @@
     <Content Include="Icons\salir-24px.png" />
     <Content Include="Icons\search-16px.png" />
     <Content Include="Icons\solicitudes-24px.png" />
+    <Content Include="Icons\User-64px.png" />
     <Content Include="Icons\Usuario-24px.png" />
     <Content Include="Images\Home.jpeg" />
   </ItemGroup>
