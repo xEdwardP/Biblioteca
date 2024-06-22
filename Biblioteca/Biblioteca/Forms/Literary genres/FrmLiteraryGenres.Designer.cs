@@ -70,6 +70,7 @@
             // 
             this.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtSearch.Location = new System.Drawing.Point(87, 157);
+            this.TxtSearch.MaxLength = 150;
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(497, 27);
             this.TxtSearch.TabIndex = 50;
@@ -134,6 +135,7 @@
             // 
             this.TxtGenre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtGenre.Location = new System.Drawing.Point(87, 77);
+            this.TxtGenre.MaxLength = 150;
             this.TxtGenre.Name = "TxtGenre";
             this.TxtGenre.Size = new System.Drawing.Size(530, 27);
             this.TxtGenre.TabIndex = 46;

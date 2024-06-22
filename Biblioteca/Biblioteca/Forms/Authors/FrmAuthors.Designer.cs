@@ -106,6 +106,7 @@
             // 
             this.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtSearch.Location = new System.Drawing.Point(102, 184);
+            this.TxtSearch.MaxLength = 150;
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(589, 27);
             this.TxtSearch.TabIndex = 52;

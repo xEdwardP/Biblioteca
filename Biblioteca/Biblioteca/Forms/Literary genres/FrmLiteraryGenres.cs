@@ -224,6 +224,7 @@ namespace Biblioteca.Forms.Literary_genres
             if(helpers.CleanStr(TxtGenre.Text.Trim()).Length == 0)
             {
                 TxtGenre.Focus();
+                helpers.MsgWarning("");
                 errors++;
                 return;
             }
