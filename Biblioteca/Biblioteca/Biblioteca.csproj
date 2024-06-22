@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\App.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Helpers.cs" />
+    <Compile Include="Clases\Messages.cs" />
     <Compile Include="Clases\Repository.cs" />
     <Compile Include="Forms\Authors\FrmAuthors.cs">
       <SubType>Form</SubType>
