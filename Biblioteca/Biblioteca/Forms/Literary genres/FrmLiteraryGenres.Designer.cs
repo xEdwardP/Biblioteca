@@ -31,29 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLiteraryGenres));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnSearch = new System.Windows.Forms.Button();
-            this.TxtIdGen = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.DgvData = new System.Windows.Forms.DataGridView();
             this.DcId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DcGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TxtGenero = new System.Windows.Forms.TextBox();
+            this.TxtGenre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.BtnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.BtnNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.BtnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.BtnUpdate = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.BtnCancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.BtnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnSalir = new System.Windows.Forms.ToolStripButton();
+            this.BtnClose = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,33 +64,15 @@
             this.BtnSearch.Size = new System.Drawing.Size(27, 27);
             this.BtnSearch.TabIndex = 53;
             this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // TxtIdGen
+            // TxtSearch
             // 
-            this.TxtIdGen.Location = new System.Drawing.Point(387, 39);
-            this.TxtIdGen.Name = "TxtIdGen";
-            this.TxtIdGen.ReadOnly = true;
-            this.TxtIdGen.Size = new System.Drawing.Size(100, 27);
-            this.TxtIdGen.TabIndex = 52;
-            this.TxtIdGen.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(325, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 19);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "IDGEN:";
-            this.label5.Visible = false;
-            // 
-            // TxtBuscar
-            // 
-            this.TxtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtBuscar.Location = new System.Drawing.Point(87, 157);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(497, 27);
-            this.TxtBuscar.TabIndex = 50;
+            this.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtSearch.Location = new System.Drawing.Point(87, 157);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(497, 27);
+            this.TxtSearch.TabIndex = 50;
             // 
             // label2
             // 
@@ -135,6 +115,7 @@
             this.DgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvData.Size = new System.Drawing.Size(601, 130);
             this.DgvData.TabIndex = 47;
+            this.DgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellDoubleClick);
             // 
             // DcId
             // 
@@ -149,13 +130,13 @@
             this.DcGenero.ReadOnly = true;
             this.DcGenero.Width = 480;
             // 
-            // TxtGenero
+            // TxtGenre
             // 
-            this.TxtGenero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtGenero.Location = new System.Drawing.Point(87, 77);
-            this.TxtGenero.Name = "TxtGenero";
-            this.TxtGenero.Size = new System.Drawing.Size(530, 27);
-            this.TxtGenero.TabIndex = 46;
+            this.TxtGenre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtGenre.Location = new System.Drawing.Point(87, 77);
+            this.TxtGenre.Name = "TxtGenre";
+            this.TxtGenre.Size = new System.Drawing.Size(530, 27);
+            this.TxtGenre.TabIndex = 46;
             // 
             // label3
             // 
@@ -182,108 +163,114 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnNuevo,
+            this.BtnNew,
             this.toolStripSeparator1,
-            this.BtnGuardar,
+            this.BtnSave,
             this.toolStripSeparator2,
-            this.BtnActualizar,
+            this.BtnUpdate,
             this.toolStripSeparator3,
-            this.BtnCancelar,
+            this.BtnCancel,
             this.toolStripSeparator4,
-            this.BtnEliminar,
+            this.BtnDelete,
             this.toolStripSeparator5,
-            this.BtnSalir});
+            this.BtnClose});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(635, 31);
             this.toolStrip1.TabIndex = 43;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // BtnNuevo
+            // BtnNew
             // 
-            this.BtnNuevo.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("BtnNuevo.Image")));
-            this.BtnNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(76, 28);
-            this.BtnNuevo.Text = "NUEVO";
+            this.BtnNew.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNew.Image = ((System.Drawing.Image)(resources.GetObject("BtnNew.Image")));
+            this.BtnNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnNew.Name = "BtnNew";
+            this.BtnNew.Size = new System.Drawing.Size(76, 28);
+            this.BtnNew.Text = "NUEVO";
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnGuardar
+            // BtnSave
             // 
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardar.Image")));
-            this.BtnGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(94, 28);
-            this.BtnGuardar.Text = "GUARDAR";
+            this.BtnSave.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSave.Image = ((System.Drawing.Image)(resources.GetObject("BtnSave.Image")));
+            this.BtnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(94, 28);
+            this.BtnSave.Text = "GUARDAR";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnActualizar
+            // BtnUpdate
             // 
-            this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnActualizar.Image")));
-            this.BtnActualizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(107, 28);
-            this.BtnActualizar.Text = "ACTUALIZAR";
+            this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.Image")));
+            this.BtnUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(107, 28);
+            this.BtnUpdate.Text = "ACTUALIZAR";
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnCancelar
+            // BtnCancel
             // 
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.Image")));
-            this.BtnCancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(94, 28);
-            this.BtnCancelar.Text = "CANCELAR";
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancel.Image")));
+            this.BtnCancel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(94, 28);
+            this.BtnCancel.Text = "CANCELAR";
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnEliminar
+            // BtnDelete
             // 
-            this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEliminar.Image")));
-            this.BtnEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(91, 28);
-            this.BtnEliminar.Text = "ELIMINAR";
+            this.BtnDelete.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("BtnDelete.Image")));
+            this.BtnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(91, 28);
+            this.BtnDelete.Text = "ELIMINAR";
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnSalir
+            // BtnClose
             // 
-            this.BtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(68, 28);
-            this.BtnSalir.Text = "SALIR";
+            this.BtnClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnClose.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClose.Image = ((System.Drawing.Image)(resources.GetObject("BtnClose.Image")));
+            this.BtnClose.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(68, 28);
+            this.BtnClose.Text = "SALIR";
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // FrmLiteraryGenres
             // 
@@ -291,13 +278,11 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(635, 336);
             this.Controls.Add(this.BtnSearch);
-            this.Controls.Add(this.TxtIdGen);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.TxtBuscar);
+            this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DgvData);
-            this.Controls.Add(this.TxtGenero);
+            this.Controls.Add(this.TxtGenre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
@@ -309,6 +294,7 @@
             this.Name = "FrmLiteraryGenres";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---";
+            this.Load += new System.EventHandler(this.FrmLiteraryGenres_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -320,28 +306,26 @@
         #endregion
 
         private System.Windows.Forms.Button BtnSearch;
-        private System.Windows.Forms.TextBox TxtIdGen;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TxtBuscar;
+        private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView DgvData;
         private System.Windows.Forms.DataGridViewTextBoxColumn DcId;
         private System.Windows.Forms.DataGridViewTextBoxColumn DcGenero;
-        private System.Windows.Forms.TextBox TxtGenero;
+        private System.Windows.Forms.TextBox TxtGenre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton BtnNuevo;
+        private System.Windows.Forms.ToolStripButton BtnNew;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton BtnGuardar;
+        private System.Windows.Forms.ToolStripButton BtnSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton BtnActualizar;
+        private System.Windows.Forms.ToolStripButton BtnUpdate;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton BtnCancelar;
+        private System.Windows.Forms.ToolStripButton BtnCancel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton BtnEliminar;
+        private System.Windows.Forms.ToolStripButton BtnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton BtnSalir;
+        private System.Windows.Forms.ToolStripButton BtnClose;
     }
 }

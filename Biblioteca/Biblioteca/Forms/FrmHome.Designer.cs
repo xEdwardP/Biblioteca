@@ -281,6 +281,7 @@
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(68, 28);
             this.BtnExit.Text = "SALIR";
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // BtnMembers
             // 
@@ -344,6 +345,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHome_FormClosing);
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

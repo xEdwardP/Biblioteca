@@ -12,6 +12,7 @@ namespace Biblioteca.Forms
 {
     public partial class FrmHome : Form
     {
+        Clases.Helpers Helpers = new Clases.Helpers();
         public FrmHome()
         {
             InitializeComponent();
@@ -42,6 +43,20 @@ namespace Biblioteca.Forms
             var publishers = new Forms.Publishing.FrmPublisher();
             publishers.MdiParent = this;
             publishers.Show();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            string msg = "¿ESTA SEGURO QUE DESEA ABANDONAR LA APLICACION?";
+            if (Helpers.MsgQuestion(msg) == "S")
+            {
+                Application.Exit();
+            }
+        }
+
+        private void FrmHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
