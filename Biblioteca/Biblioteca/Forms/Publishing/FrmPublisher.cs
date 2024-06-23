@@ -159,7 +159,7 @@ namespace Biblioteca.Forms.Publishing
         private void AutoGenCode()
         {
             code = "EDT" + repository.GetNext(idmodule);
-            helpers.MsgInfo(code.ToString());
+            // helpers.MsgInfo(code.ToString());
         }
 
         private void StartForm()
@@ -245,16 +245,21 @@ namespace Biblioteca.Forms.Publishing
             DgvData.Rows.Clear();
 
             string _idpublisher, _publisher;
-
-            for (int i = 0; i < data.Rows.Count; i++)
+            if (data.Rows.Count > 0)
             {
-                _idpublisher = data.Rows[i][0].ToString();
-                _publisher = data.Rows[i][1].ToString();
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    _idpublisher = data.Rows[i][0].ToString();
+                    _publisher = data.Rows[i][1].ToString();
 
-                DgvData.Rows.Add(_idpublisher, _publisher);
+                    DgvData.Rows.Add(_idpublisher, _publisher);
+                }
+                data.Dispose();
             }
-
-            data.Dispose();
+            else
+            {
+                helpers.MsgWarning(Clases.Messages.MsgNotFound);
+            }
         }
 
         private void GetInfoPublishers(string id)

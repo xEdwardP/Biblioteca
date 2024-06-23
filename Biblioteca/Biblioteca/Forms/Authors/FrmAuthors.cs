@@ -96,9 +96,9 @@ namespace Biblioteca.Forms.Authors
         {
             if(helpers.MsgQuestion(Clases.Messages.MsgDelete) == "S")
             {
-                string id = code;
+                string condition = "IDAUTOR='" + code + "'";
 
-                if(repository.Delete("AUTORES", "IDAUTOR", id) > 0)
+                if (repository.Destroy("AUTORES", condition) > 0)
                 {
                     helpers.MsgSuccess(Clases.Messages.MsgDeletedSuccessfully);
                     Clean();
@@ -190,11 +190,7 @@ namespace Biblioteca.Forms.Authors
 
             if (search != "")
             {
-                condition = "AUTOR LIKE '%" + search + "%' AND DEL = 'N'";
-            }
-            else
-            {
-                condition = "DEL = 'N'";
+                condition = "AUTOR LIKE '%" + search + "%'";
             }
 
             DataTable data = repository.Find("AUTORES", fields, condition);
@@ -202,15 +198,21 @@ namespace Biblioteca.Forms.Authors
 
             string _id, _author;
 
-            for (int i = 0; i < data.Rows.Count; i++)
+            if (data.Rows.Count > 0)
             {
-                _id = data.Rows[i][0].ToString();
-                _author = data.Rows[i][1].ToString();
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    _id = data.Rows[i][0].ToString();
+                    _author = data.Rows[i][1].ToString();
 
-                DgvData.Rows.Add(_id, _author);
+                    DgvData.Rows.Add(_id, _author);
+                }
+                data.Dispose();
             }
-
-            data.Dispose();
+            else
+            {
+                helpers.MsgWarning(Clases.Messages.MsgNotFound);
+            }
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -242,7 +244,7 @@ namespace Biblioteca.Forms.Authors
 
         private void GetInfoAuthors(string id)
         {
-            string condition = "IDAUTOR = '" + id + "' AND DEL='N'";
+            string condition = "IDAUTOR = '" + id + "'";
             DataTable data = repository.Find("AUTORES", "*", condition);
 
             if (data.Rows.Count > 0)

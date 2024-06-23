@@ -264,6 +264,7 @@
             this.BtnBooks.Name = "BtnBooks";
             this.BtnBooks.Size = new System.Drawing.Size(77, 28);
             this.BtnBooks.Text = "LIBROS";
+            this.BtnBooks.Click += new System.EventHandler(this.BtnBooks_Click);
             // 
             // toolStripSeparator4
             // 

@@ -33,14 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.ChkAutoGen = new System.Windows.Forms.CheckBox();
-            this.CmbAPub = new System.Windows.Forms.ComboBox();
             this.CmbEdition = new System.Windows.Forms.ComboBox();
             this.TxtStock = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.TxtIsbn = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.DgvData = new System.Windows.Forms.DataGridView();
             this.DcCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +73,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.TxtYearP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,11 +81,12 @@
             // BtnSearch
             // 
             this.BtnSearch.Image = ((System.Drawing.Image)(resources.GetObject("BtnSearch.Image")));
-            this.BtnSearch.Location = new System.Drawing.Point(850, 285);
+            this.BtnSearch.Location = new System.Drawing.Point(848, 304);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(27, 27);
             this.BtnSearch.TabIndex = 57;
             this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // ChkAutoGen
             // 
@@ -99,57 +100,50 @@
             this.ChkAutoGen.Text = "Auto Generar";
             this.ChkAutoGen.UseVisualStyleBackColor = true;
             // 
-            // CmbAPub
-            // 
-            this.CmbAPub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbAPub.FormattingEnabled = true;
-            this.CmbAPub.Items.AddRange(new object[] {
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022"});
-            this.CmbAPub.Location = new System.Drawing.Point(129, 181);
-            this.CmbAPub.Name = "CmbAPub";
-            this.CmbAPub.Size = new System.Drawing.Size(311, 27);
-            this.CmbAPub.TabIndex = 55;
-            // 
             // CmbEdition
             // 
             this.CmbEdition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbEdition.FormattingEnabled = true;
             this.CmbEdition.Items.AddRange(new object[] {
-            "Edicion N.1",
-            "Edicion N.2",
-            "Edicion N.3",
-            "Edicion N.4",
-            "Edicion N.5"});
-            this.CmbEdition.Location = new System.Drawing.Point(525, 181);
+            "Primera edición",
+            "Segunda edición",
+            "Tercera edición",
+            "Cuarta edición",
+            "Quinta edición",
+            "Sexta edición",
+            "Séptima edición",
+            "Octava edición",
+            "Novena edición",
+            "Décima edición",
+            "Undécima edición",
+            "Duodécima edición",
+            "Decimotercera edición",
+            "Decimocuarta edición",
+            "Decimoquinta edición",
+            "Decimosexta edición",
+            "Decimoséptima edición",
+            "Decimoctava edición",
+            "Decimonovena edición",
+            "Vigésima edición"});
+            this.CmbEdition.Location = new System.Drawing.Point(525, 214);
             this.CmbEdition.Name = "CmbEdition";
-            this.CmbEdition.Size = new System.Drawing.Size(352, 27);
+            this.CmbEdition.Size = new System.Drawing.Size(302, 27);
             this.CmbEdition.TabIndex = 54;
             // 
             // TxtStock
             // 
-            this.TxtStock.Location = new System.Drawing.Point(525, 214);
-            this.TxtStock.MaxLength = 7;
+            this.TxtStock.Location = new System.Drawing.Point(638, 247);
+            this.TxtStock.MaxLength = 10;
             this.TxtStock.Name = "TxtStock";
-            this.TxtStock.Size = new System.Drawing.Size(352, 27);
+            this.TxtStock.Size = new System.Drawing.Size(189, 27);
             this.TxtStock.TabIndex = 53;
+            this.TxtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(446, 217);
+            this.label13.Location = new System.Drawing.Point(572, 250);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 19);
             this.label13.TabIndex = 52;
@@ -157,17 +151,18 @@
             // 
             // TxtIsbn
             // 
-            this.TxtIsbn.Location = new System.Drawing.Point(129, 247);
-            this.TxtIsbn.MaxLength = 150;
+            this.TxtIsbn.Location = new System.Drawing.Point(377, 247);
+            this.TxtIsbn.MaxLength = 50;
             this.TxtIsbn.Name = "TxtIsbn";
-            this.TxtIsbn.Size = new System.Drawing.Size(311, 27);
+            this.TxtIsbn.Size = new System.Drawing.Size(189, 27);
             this.TxtIsbn.TabIndex = 51;
+            this.TxtIsbn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 250);
+            this.label12.Location = new System.Drawing.Point(323, 250);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 19);
             this.label12.TabIndex = 50;
@@ -177,26 +172,26 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 184);
+            this.label11.Location = new System.Drawing.Point(13, 250);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 19);
             this.label11.TabIndex = 49;
             this.label11.Text = "AÑO PUB:";
             // 
-            // TxtBuscar
+            // TxtSearch
             // 
-            this.TxtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtBuscar.Location = new System.Drawing.Point(525, 285);
-            this.TxtBuscar.MaxLength = 200;
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(319, 27);
-            this.TxtBuscar.TabIndex = 48;
+            this.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtSearch.Location = new System.Drawing.Point(523, 304);
+            this.TxtSearch.MaxLength = 150;
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(319, 27);
+            this.TxtSearch.TabIndex = 48;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(446, 288);
+            this.label10.Location = new System.Drawing.Point(444, 307);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 19);
             this.label10.TabIndex = 47;
@@ -216,7 +211,7 @@
             this.DcTitulo,
             this.DcDescripcion,
             this.DcStock});
-            this.DgvData.Location = new System.Drawing.Point(18, 328);
+            this.DgvData.Location = new System.Drawing.Point(18, 346);
             this.DgvData.Name = "DgvData";
             this.DgvData.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -231,6 +226,7 @@
             this.DgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvData.Size = new System.Drawing.Size(859, 180);
             this.DgvData.TabIndex = 46;
+            this.DgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellDoubleClick);
             // 
             // DcCodigo
             // 
@@ -263,9 +259,9 @@
             this.label9.BackColor = System.Drawing.Color.Teal;
             this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(-2, 283);
+            this.label9.Location = new System.Drawing.Point(-4, 302);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(442, 28);
+            this.label9.Size = new System.Drawing.Size(444, 28);
             this.label9.TabIndex = 45;
             this.label9.Text = "     LIBROS REGISTRADOS";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,16 +279,16 @@
             // 
             this.CmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbGenre.FormattingEnabled = true;
-            this.CmbGenre.Location = new System.Drawing.Point(525, 148);
+            this.CmbGenre.Location = new System.Drawing.Point(524, 181);
             this.CmbGenre.Name = "CmbGenre";
-            this.CmbGenre.Size = new System.Drawing.Size(352, 27);
+            this.CmbGenre.Size = new System.Drawing.Size(304, 27);
             this.CmbGenre.TabIndex = 43;
             // 
             // CmbAuthor
             // 
             this.CmbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbAuthor.FormattingEnabled = true;
-            this.CmbAuthor.Location = new System.Drawing.Point(129, 148);
+            this.CmbAuthor.Location = new System.Drawing.Point(128, 181);
             this.CmbAuthor.Name = "CmbAuthor";
             this.CmbAuthor.Size = new System.Drawing.Size(311, 27);
             this.CmbAuthor.TabIndex = 42;
@@ -300,27 +296,27 @@
             // TxtDescription
             // 
             this.TxtDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtDescription.Location = new System.Drawing.Point(129, 115);
-            this.TxtDescription.MaxLength = 50;
+            this.TxtDescription.Location = new System.Drawing.Point(128, 148);
+            this.TxtDescription.MaxLength = 150;
             this.TxtDescription.Multiline = true;
             this.TxtDescription.Name = "TxtDescription";
-            this.TxtDescription.Size = new System.Drawing.Size(748, 27);
+            this.TxtDescription.Size = new System.Drawing.Size(699, 27);
             this.TxtDescription.TabIndex = 41;
             // 
             // TxtTitle
             // 
             this.TxtTitle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtTitle.Location = new System.Drawing.Point(525, 82);
-            this.TxtTitle.MaxLength = 200;
+            this.TxtTitle.Location = new System.Drawing.Point(129, 115);
+            this.TxtTitle.MaxLength = 100;
             this.TxtTitle.Name = "TxtTitle";
-            this.TxtTitle.Size = new System.Drawing.Size(352, 27);
+            this.TxtTitle.Size = new System.Drawing.Size(311, 27);
             this.TxtTitle.TabIndex = 40;
             // 
             // TxtCode
             // 
             this.TxtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCode.Location = new System.Drawing.Point(129, 82);
-            this.TxtCode.MaxLength = 30;
+            this.TxtCode.MaxLength = 9;
             this.TxtCode.Name = "TxtCode";
             this.TxtCode.Size = new System.Drawing.Size(189, 27);
             this.TxtCode.TabIndex = 39;
@@ -341,7 +337,7 @@
             this.BtnClose});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(885, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(891, 31);
             this.toolStrip1.TabIndex = 38;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -354,6 +350,7 @@
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(76, 28);
             this.BtnNew.Text = "NUEVO";
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // toolStripSeparator1
             // 
@@ -369,6 +366,7 @@
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(94, 28);
             this.BtnSave.Text = "GUARDAR";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // toolStripSeparator2
             // 
@@ -384,6 +382,7 @@
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(107, 28);
             this.BtnUpdate.Text = "ACTUALIZAR";
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // toolStripSeparator3
             // 
@@ -399,6 +398,7 @@
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(94, 28);
             this.BtnCancel.Text = "CANCELAR";
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // toolStripSeparator4
             // 
@@ -414,6 +414,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(91, 28);
             this.BtnDelete.Text = "ELIMINAR";
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // toolStripSeparator5
             // 
@@ -430,12 +431,13 @@
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(68, 28);
             this.BtnClose.Text = "SALIR";
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(446, 184);
+            this.label8.Location = new System.Drawing.Point(446, 217);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 19);
             this.label8.TabIndex = 37;
@@ -445,7 +447,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 217);
+            this.label7.Location = new System.Drawing.Point(12, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 19);
             this.label7.TabIndex = 36;
@@ -455,7 +457,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(446, 151);
+            this.label6.Location = new System.Drawing.Point(445, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 19);
             this.label6.TabIndex = 35;
@@ -465,7 +467,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 151);
+            this.label5.Location = new System.Drawing.Point(12, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 19);
             this.label5.TabIndex = 34;
@@ -475,7 +477,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 118);
+            this.label4.Location = new System.Drawing.Point(12, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 19);
             this.label4.TabIndex = 33;
@@ -485,7 +487,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(446, 85);
+            this.label3.Location = new System.Drawing.Point(14, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 19);
             this.label3.TabIndex = 32;
@@ -513,21 +515,30 @@
             this.label1.Text = "     DATOS GENERALES DEL LIBRO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // TxtYearP
+            // 
+            this.TxtYearP.Location = new System.Drawing.Point(128, 247);
+            this.TxtYearP.MaxLength = 10;
+            this.TxtYearP.Name = "TxtYearP";
+            this.TxtYearP.Size = new System.Drawing.Size(189, 27);
+            this.TxtYearP.TabIndex = 58;
+            this.TxtYearP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FrmBooks
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(885, 522);
+            this.ClientSize = new System.Drawing.Size(891, 536);
+            this.Controls.Add(this.TxtYearP);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.ChkAutoGen);
-            this.Controls.Add(this.CmbAPub);
             this.Controls.Add(this.CmbEdition);
             this.Controls.Add(this.TxtStock);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.TxtIsbn);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.TxtBuscar);
+            this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.DgvData);
             this.Controls.Add(this.label9);
@@ -567,14 +578,13 @@
 
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.CheckBox ChkAutoGen;
-        private System.Windows.Forms.ComboBox CmbAPub;
         private System.Windows.Forms.ComboBox CmbEdition;
         private System.Windows.Forms.TextBox TxtStock;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox TxtIsbn;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox TxtBuscar;
+        private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView DgvData;
         private System.Windows.Forms.DataGridViewTextBoxColumn DcCodigo;
@@ -608,5 +618,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtYearP;
     }
 }

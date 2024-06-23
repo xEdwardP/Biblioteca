@@ -188,15 +188,21 @@ namespace Biblioteca.Forms.Literary_genres
 
             string _idgen, _genre;
 
-            for(int i = 0; i <  data.Rows.Count; i++)
+            if (data.Rows.Count > 0)
             {
-                _idgen = data.Rows[i][0].ToString();
-                _genre = data.Rows[i][1].ToString();
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    _idgen = data.Rows[i][0].ToString();
+                    _genre = data.Rows[i][1].ToString();
 
-                DgvData.Rows.Add(_idgen, _genre);
+                    DgvData.Rows.Add(_idgen, _genre);
+                }
+                data.Dispose();
             }
-
-            data.Dispose();
+            else
+            {
+                helpers.MsgWarning(Clases.Messages.MsgNotFound);
+            }
         }
 
         private void GetInfoLiteraryGenres(string id)

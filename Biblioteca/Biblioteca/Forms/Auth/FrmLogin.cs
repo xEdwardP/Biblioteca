@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace Biblioteca.Forms.Auth
 {
     public partial class FrmLogin : Form
     {
+        Clases.Helpers helpers = new Clases.Helpers();
+
         public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -22,6 +30,15 @@ namespace Biblioteca.Forms.Auth
             var home = new Forms.FrmHome();
             home.Show();
             this.Hide();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            string msg = "¿ESTA SEGURO QUE DESEA ABANDONAR LA APLICACION?";
+            if (helpers.MsgQuestion(msg) == "S")
+            {
+                Application.Exit();
+            }
         }
     }
 }

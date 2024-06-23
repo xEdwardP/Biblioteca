@@ -58,5 +58,12 @@ namespace Biblioteca.Forms
         {
             Application.Exit();
         }
+
+        private void BtnBooks_Click(object sender, EventArgs e)
+        {
+            var books = new Forms.Books.FrmBooks();
+            books.MdiParent = this;
+            books.Show();
+        }
     }
 }

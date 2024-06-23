@@ -20,5 +20,6 @@
 
         // ERRORS
         public static string MsgErrorInfo = "ERROR AL RECUPERAR LOS DATOS DEL REGISTRO SELECCIONADO!";
+        public static string MsgNotFound = "NO SE ENCONTRARON COINCIDENCIAS!";
     }
 }
