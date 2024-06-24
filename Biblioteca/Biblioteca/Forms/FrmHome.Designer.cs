@@ -39,7 +39,7 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.OptLibros = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.OptEmpleados = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.OptMiembros = new System.Windows.Forms.ToolStripMenuItem();
             this.TsReportes = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,7 +95,7 @@
             this.toolStripSeparator7,
             this.OptLibros,
             this.toolStripSeparator8,
-            this.OptEmpleados,
+            this.OptEmployee,
             this.toolStripSeparator9,
             this.OptMiembros});
             this.TsArchivo.Name = "TsArchivo";
@@ -150,12 +150,13 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(186, 6);
             // 
-            // OptEmpleados
+            // OptEmployee
             // 
-            this.OptEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("OptEmpleados.Image")));
-            this.OptEmpleados.Name = "OptEmpleados";
-            this.OptEmpleados.Size = new System.Drawing.Size(189, 22);
-            this.OptEmpleados.Text = "EMPLEADOS";
+            this.OptEmployee.Image = ((System.Drawing.Image)(resources.GetObject("OptEmployee.Image")));
+            this.OptEmployee.Name = "OptEmployee";
+            this.OptEmployee.Size = new System.Drawing.Size(189, 22);
+            this.OptEmployee.Text = "EMPLEADOS";
+            this.OptEmployee.Click += new System.EventHandler(this.OptEmployee_Click);
             // 
             // toolStripSeparator9
             // 
@@ -430,7 +431,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem OptLibros;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripMenuItem OptEmpleados;
+        private System.Windows.Forms.ToolStripMenuItem OptEmployee;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem OptMiembros;
         private System.Windows.Forms.ToolStripMenuItem TsReportes;

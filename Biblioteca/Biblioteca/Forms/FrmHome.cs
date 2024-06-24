@@ -74,5 +74,12 @@ namespace Biblioteca.Forms
             LblUser.Text = "[ USUARIO ANONIMO ]";
             LblFecha.Text = DateTime.Today.ToLongDateString().ToUpper();
         }
+
+        private void OptEmployee_Click(object sender, EventArgs e)
+        {
+            var employee = new Forms.Employees.FrmEmployees();
+            employee.MdiParent = this;
+            employee.Show();
+        }
     }
 }

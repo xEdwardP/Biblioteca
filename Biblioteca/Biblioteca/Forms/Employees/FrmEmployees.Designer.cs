@@ -32,22 +32,20 @@
             this.BtnSearch = new System.Windows.Forms.Button();
             this.LblMsg = new System.Windows.Forms.Label();
             this.DgvData = new System.Windows.Forms.DataGridView();
-            this.DcIdentidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DcEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.TxtSalario = new System.Windows.Forms.TextBox();
-            this.CmbDepartamento = new System.Windows.Forms.ComboBox();
-            this.TxtTelefono = new System.Windows.Forms.TextBox();
-            this.TxtDireccion = new System.Windows.Forms.TextBox();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
+            this.TxtSalary = new System.Windows.Forms.TextBox();
+            this.CmbJob = new System.Windows.Forms.ComboBox();
+            this.TxtPhone = new System.Windows.Forms.TextBox();
+            this.TxtAdress = new System.Windows.Forms.TextBox();
+            this.TxtName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtIdentidad = new System.Windows.Forms.TextBox();
+            this.TxtDocument = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -62,13 +60,21 @@
             this.BtnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnClose = new System.Windows.Forms.ToolStripButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DtpDateBirth = new System.Windows.Forms.DateTimePicker();
+            this.CmbGenre = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnCancelSearch = new System.Windows.Forms.Button();
+            this.TxtLastName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CmbStateEmployee = new System.Windows.Forms.ComboBox();
+            this.LblStaetEmployee = new System.Windows.Forms.Label();
+            this.DcCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +87,7 @@
             this.BtnSearch.Size = new System.Drawing.Size(27, 27);
             this.BtnSearch.TabIndex = 52;
             this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // LblMsg
             // 
@@ -93,6 +100,7 @@
             this.LblMsg.TabIndex = 51;
             this.LblMsg.Text = "---";
             this.LblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblMsg.Visible = false;
             // 
             // DgvData
             // 
@@ -102,8 +110,10 @@
             this.DgvData.AllowUserToResizeRows = false;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DcIdentidad,
-            this.DcEmpleado});
+            this.DcCode,
+            this.DcDocument,
+            this.DcName,
+            this.DcState});
             this.DgvData.Location = new System.Drawing.Point(12, 352);
             this.DgvData.Name = "DgvData";
             this.DgvData.ReadOnly = true;
@@ -112,27 +122,13 @@
             this.DgvData.Size = new System.Drawing.Size(840, 203);
             this.DgvData.TabIndex = 50;
             // 
-            // DcIdentidad
+            // TxtSearch
             // 
-            this.DcIdentidad.HeaderText = "IDENTIDAD";
-            this.DcIdentidad.Name = "DcIdentidad";
-            this.DcIdentidad.ReadOnly = true;
-            this.DcIdentidad.Width = 150;
-            // 
-            // DcEmpleado
-            // 
-            this.DcEmpleado.HeaderText = "NOMBRE";
-            this.DcEmpleado.Name = "DcEmpleado";
-            this.DcEmpleado.ReadOnly = true;
-            this.DcEmpleado.Width = 670;
-            // 
-            // TxtBuscar
-            // 
-            this.TxtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtBuscar.Location = new System.Drawing.Point(447, 316);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(339, 27);
-            this.TxtBuscar.TabIndex = 49;
+            this.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtSearch.Location = new System.Drawing.Point(447, 316);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(339, 27);
+            this.TxtSearch.TabIndex = 49;
             // 
             // label9
             // 
@@ -156,46 +152,46 @@
             this.label8.Text = "     EMPLEADOS REGISTRADOS";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // TxtSalario
+            // TxtSalary
             // 
-            this.TxtSalario.Location = new System.Drawing.Point(731, 275);
-            this.TxtSalario.Name = "TxtSalario";
-            this.TxtSalario.Size = new System.Drawing.Size(121, 27);
-            this.TxtSalario.TabIndex = 46;
+            this.TxtSalary.Location = new System.Drawing.Point(731, 275);
+            this.TxtSalary.Name = "TxtSalary";
+            this.TxtSalary.Size = new System.Drawing.Size(121, 27);
+            this.TxtSalary.TabIndex = 46;
             // 
-            // CmbDepartamento
+            // CmbJob
             // 
-            this.CmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbDepartamento.FormattingEnabled = true;
-            this.CmbDepartamento.Location = new System.Drawing.Point(110, 275);
-            this.CmbDepartamento.Name = "CmbDepartamento";
-            this.CmbDepartamento.Size = new System.Drawing.Size(484, 27);
-            this.CmbDepartamento.TabIndex = 45;
+            this.CmbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbJob.FormattingEnabled = true;
+            this.CmbJob.Location = new System.Drawing.Point(110, 275);
+            this.CmbJob.Name = "CmbJob";
+            this.CmbJob.Size = new System.Drawing.Size(484, 27);
+            this.CmbJob.TabIndex = 45;
             // 
-            // TxtTelefono
+            // TxtPhone
             // 
-            this.TxtTelefono.Location = new System.Drawing.Point(463, 242);
-            this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(131, 27);
-            this.TxtTelefono.TabIndex = 44;
+            this.TxtPhone.Location = new System.Drawing.Point(463, 242);
+            this.TxtPhone.Name = "TxtPhone";
+            this.TxtPhone.Size = new System.Drawing.Size(131, 27);
+            this.TxtPhone.TabIndex = 44;
             // 
-            // TxtDireccion
+            // TxtAdress
             // 
-            this.TxtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtDireccion.Location = new System.Drawing.Point(112, 149);
-            this.TxtDireccion.Multiline = true;
-            this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TxtDireccion.Size = new System.Drawing.Size(740, 54);
-            this.TxtDireccion.TabIndex = 43;
+            this.TxtAdress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtAdress.Location = new System.Drawing.Point(112, 149);
+            this.TxtAdress.Multiline = true;
+            this.TxtAdress.Name = "TxtAdress";
+            this.TxtAdress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TxtAdress.Size = new System.Drawing.Size(740, 54);
+            this.TxtAdress.TabIndex = 43;
             // 
-            // TxtNombre
+            // TxtName
             // 
-            this.TxtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtNombre.Location = new System.Drawing.Point(112, 116);
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(740, 27);
-            this.TxtNombre.TabIndex = 42;
+            this.TxtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtName.Location = new System.Drawing.Point(110, 116);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(321, 27);
+            this.TxtName.TabIndex = 42;
             // 
             // label7
             // 
@@ -249,12 +245,12 @@
             this.label3.TabIndex = 37;
             this.label3.Text = "DIRECCION:";
             // 
-            // TxtIdentidad
+            // TxtDocument
             // 
-            this.TxtIdentidad.Location = new System.Drawing.Point(112, 83);
-            this.TxtIdentidad.Name = "TxtIdentidad";
-            this.TxtIdentidad.Size = new System.Drawing.Size(256, 27);
-            this.TxtIdentidad.TabIndex = 36;
+            this.TxtDocument.Location = new System.Drawing.Point(112, 83);
+            this.TxtDocument.Name = "TxtDocument";
+            this.TxtDocument.Size = new System.Drawing.Size(256, 27);
+            this.TxtDocument.TabIndex = 36;
             // 
             // label2
             // 
@@ -305,6 +301,7 @@
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(76, 28);
             this.BtnNew.Text = "NUEVO";
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // toolStripSeparator1
             // 
@@ -320,6 +317,7 @@
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(94, 28);
             this.BtnSave.Text = "GUARDAR";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // toolStripSeparator2
             // 
@@ -335,6 +333,7 @@
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(107, 28);
             this.BtnUpdate.Text = "ACTUALIZAR";
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // toolStripSeparator3
             // 
@@ -350,6 +349,7 @@
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(94, 28);
             this.BtnCancel.Text = "CANCELAR";
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // toolStripSeparator4
             // 
@@ -365,6 +365,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(91, 28);
             this.BtnDelete.Text = "ELIMINAR";
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // toolStripSeparator5
             // 
@@ -381,13 +382,14 @@
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(68, 28);
             this.BtnClose.Text = "SALIR";
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // textBox1
+            // TxtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(740, 27);
-            this.textBox1.TabIndex = 54;
+            this.TxtEmail.Location = new System.Drawing.Point(112, 209);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(740, 27);
+            this.TxtEmail.TabIndex = 54;
             // 
             // label10
             // 
@@ -409,25 +411,25 @@
             this.label11.TabIndex = 55;
             this.label11.Text = "F. NACIMIENTO:";
             // 
-            // dateTimePicker1
+            // DtpDateBirth
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(731, 242);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 27);
-            this.dateTimePicker1.TabIndex = 56;
+            this.DtpDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpDateBirth.Location = new System.Drawing.Point(731, 242);
+            this.DtpDateBirth.Name = "DtpDateBirth";
+            this.DtpDateBirth.Size = new System.Drawing.Size(121, 27);
+            this.DtpDateBirth.TabIndex = 56;
             // 
-            // comboBox1
+            // CmbGenre
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbGenre.FormattingEnabled = true;
+            this.CmbGenre.Items.AddRange(new object[] {
             "MASCULINO",
             "FEMENINO"});
-            this.comboBox1.Location = new System.Drawing.Point(112, 242);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(256, 27);
-            this.comboBox1.TabIndex = 58;
+            this.CmbGenre.Location = new System.Drawing.Point(112, 242);
+            this.CmbGenre.Name = "CmbGenre";
+            this.CmbGenre.Size = new System.Drawing.Size(256, 27);
+            this.CmbGenre.TabIndex = 58;
             // 
             // label12
             // 
@@ -439,44 +441,119 @@
             this.label12.TabIndex = 57;
             this.label12.Text = "SEXO:";
             // 
-            // button1
+            // BtnCancelSearch
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(825, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 27);
-            this.button1.TabIndex = 59;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnCancelSearch.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelSearch.Image")));
+            this.BtnCancelSearch.Location = new System.Drawing.Point(825, 316);
+            this.BtnCancelSearch.Name = "BtnCancelSearch";
+            this.BtnCancelSearch.Size = new System.Drawing.Size(27, 27);
+            this.BtnCancelSearch.TabIndex = 59;
+            this.BtnCancelSearch.UseVisualStyleBackColor = true;
+            this.BtnCancelSearch.Click += new System.EventHandler(this.BtnCancelSearch_Click);
+            // 
+            // TxtLastName
+            // 
+            this.TxtLastName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtLastName.Location = new System.Drawing.Point(535, 116);
+            this.TxtLastName.Name = "TxtLastName";
+            this.TxtLastName.Size = new System.Drawing.Size(317, 27);
+            this.TxtLastName.TabIndex = 61;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(437, 119);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 19);
+            this.label13.TabIndex = 60;
+            this.label13.Text = "APELLIDOS:";
+            // 
+            // CmbStateEmployee
+            // 
+            this.CmbStateEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbStateEmployee.FormattingEnabled = true;
+            this.CmbStateEmployee.Items.AddRange(new object[] {
+            "MASCULINO",
+            "FEMENINO"});
+            this.CmbStateEmployee.Location = new System.Drawing.Point(458, 46);
+            this.CmbStateEmployee.Name = "CmbStateEmployee";
+            this.CmbStateEmployee.Size = new System.Drawing.Size(395, 27);
+            this.CmbStateEmployee.TabIndex = 63;
+            this.CmbStateEmployee.Visible = false;
+            // 
+            // LblStaetEmployee
+            // 
+            this.LblStaetEmployee.AutoSize = true;
+            this.LblStaetEmployee.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblStaetEmployee.Location = new System.Drawing.Point(381, 49);
+            this.LblStaetEmployee.Name = "LblStaetEmployee";
+            this.LblStaetEmployee.Size = new System.Drawing.Size(71, 19);
+            this.LblStaetEmployee.TabIndex = 62;
+            this.LblStaetEmployee.Text = "ESTADO:";
+            this.LblStaetEmployee.Visible = false;
+            // 
+            // DcCode
+            // 
+            this.DcCode.HeaderText = "CODIGO";
+            this.DcCode.Name = "DcCode";
+            this.DcCode.ReadOnly = true;
+            this.DcCode.Width = 150;
+            // 
+            // DcDocument
+            // 
+            this.DcDocument.HeaderText = "DNI";
+            this.DcDocument.Name = "DcDocument";
+            this.DcDocument.ReadOnly = true;
+            this.DcDocument.Width = 150;
+            // 
+            // DcName
+            // 
+            this.DcName.HeaderText = "NOMBRE";
+            this.DcName.Name = "DcName";
+            this.DcName.ReadOnly = true;
+            this.DcName.Width = 370;
+            // 
+            // DcState
+            // 
+            this.DcState.HeaderText = "ESTADO";
+            this.DcState.Name = "DcState";
+            this.DcState.ReadOnly = true;
+            this.DcState.Width = 150;
             // 
             // FrmEmployees
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(865, 579);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CmbStateEmployee);
+            this.Controls.Add(this.LblStaetEmployee);
+            this.Controls.Add(this.TxtLastName);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.BtnCancelSearch);
+            this.Controls.Add(this.CmbGenre);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DtpDateBirth);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.LblMsg);
             this.Controls.Add(this.DgvData);
-            this.Controls.Add(this.TxtBuscar);
+            this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.TxtSalario);
-            this.Controls.Add(this.CmbDepartamento);
-            this.Controls.Add(this.TxtTelefono);
-            this.Controls.Add(this.TxtDireccion);
-            this.Controls.Add(this.TxtNombre);
+            this.Controls.Add(this.TxtSalary);
+            this.Controls.Add(this.CmbJob);
+            this.Controls.Add(this.TxtPhone);
+            this.Controls.Add(this.TxtAdress);
+            this.Controls.Add(this.TxtName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtIdentidad);
+            this.Controls.Add(this.TxtDocument);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
@@ -502,22 +579,20 @@
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Label LblMsg;
         private System.Windows.Forms.DataGridView DgvData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DcIdentidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DcEmpleado;
-        private System.Windows.Forms.TextBox TxtBuscar;
+        private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TxtSalario;
-        private System.Windows.Forms.ComboBox CmbDepartamento;
-        private System.Windows.Forms.TextBox TxtTelefono;
-        private System.Windows.Forms.TextBox TxtDireccion;
-        private System.Windows.Forms.TextBox TxtNombre;
+        private System.Windows.Forms.TextBox TxtSalary;
+        private System.Windows.Forms.ComboBox CmbJob;
+        private System.Windows.Forms.TextBox TxtPhone;
+        private System.Windows.Forms.TextBox TxtAdress;
+        private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtIdentidad;
+        private System.Windows.Forms.TextBox TxtDocument;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -532,12 +607,20 @@
         private System.Windows.Forms.ToolStripButton BtnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton BtnClose;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker DtpDateBirth;
+        private System.Windows.Forms.ComboBox CmbGenre;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnCancelSearch;
+        private System.Windows.Forms.TextBox TxtLastName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox CmbStateEmployee;
+        private System.Windows.Forms.Label LblStaetEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcDocument;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcState;
     }
 }

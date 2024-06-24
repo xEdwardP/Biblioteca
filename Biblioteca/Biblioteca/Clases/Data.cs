@@ -12,77 +12,57 @@ namespace Biblioteca.Clases
 {
     public class Data
     {
-        Clases.Helpers Helpers { get; set; }
+        //Clases.Helpers Helpers { get; set; }
+        Clases.Helpers h = new Clases.Helpers();
 
-        //Metodo CheckFileConfiguration --> Verifica la existencia del archivo de base de datos
-        //public void CheckFileConfiguration()
-        //{
-        //    string path = @"C:\Data\Database.sql";
-
-        //    if (File.Exists(path))
-        //    {
-        //        //Cargar informacion
-        //        ReadConfiguration();
-        //    }
-        //    else
-        //    {
-        //        //Error
-        //        Helpers.MsgWarning("ERROR FATAL, NO SE CARGARON LOS ARCHIVOS DE CONFIGURACION DEL SISTEMA, CONTACTAR AL ADMINISTRADOR!");
-        //        Application.Exit();
-        //    }
-        //}
-        //Fin CheckFileConfiguration
-
-        //Metodo ReadConfiguration --> Lee y ejecuta el archivo que contiene la creacion de la base de datos
-        //private void ReadConfiguration()
-        //{
-        //    try
-        //    {
-        //        //SqlCommand sqlCommand = new SqlCommand(Path, Clases.Conexion.ConSql); 
-        //        Clases.Conexion.CloseConnection();
-        //    }
-
-        //    catch (Exception error)
-        //    {
-        //        MessageBox.Show(error.Message);
-        //    }
-
-        //    finally
-        //    {
-        //        Clases.Conexion.EndsConnection();
-        //    }
-        //}
-        //Fin ReadConfiguration
-
-        //public bool DatabaseExists(string connectionString)
-        //{
-        //    using (var context = new DbContext(connectionString))
-        //    {
-        //        return context.Database.Exists();
-        //    }
-        //}
+        static bool DatabaseExists(string connectionString)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    // La conexión se abrió correctamente, lo que significa que la base de datos existe
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                // Ocurrió un error al abrir la conexión, lo que indica que la base de datos no existe o no se puede acceder
+                return false;
+            }
+        }
 
 
         public void CheckFileConfiguration()
         {
-            string path = @"C:\Data\Database.sql";
-
-            if (File.Exists(path))
+            var resp = DatabaseExists(Clases.Conexion.cadena_de_conexion);
+            
+            if(resp == true)
             {
-                try
+                string path = @"C:\Data\Seeder.sql";
+
+                if (File.Exists(path))
                 {
-                    string sqlScript = File.ReadAllText(path);
-                    ExecuteSqlScript(sqlScript);
+                    try
+                    {
+                        string sqlScript = File.ReadAllText(path);
+                        ExecuteSqlScript(sqlScript);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error reading SQL script: {ex.Message}");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error reading SQL script: {ex.Message}");
+                    h.MsgError("ERROR FATAL, NO SE CARGARON LOS ARCHIVOS DE CONFIGURACION DEL SISTEMA, CONTACTAR AL ADMINISTRADOR!");
+                    Application.Exit();
                 }
             }
             else
             {
-                Helpers.MsgError("ERROR FATAL, NO SE CARGARON LOS ARCHIVOS DE CONFIGURACION DEL SISTEMA, CONTACTAR AL ADMINISTRADOR!");
-                Application.Exit();
+                h.MsgError("Error Fatal: La base de datos no existe o no se puede acceder");
             }
         }
 

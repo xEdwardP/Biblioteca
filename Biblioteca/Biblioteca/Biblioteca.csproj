@@ -240,6 +240,9 @@
     <Content Include="Icons\user_16px.png" />
     <Content Include="Icons\Usuario-24px.png" />
     <Content Include="Images\Home.jpeg" />
+    <Content Include="Scripts\BIBLIOTECA.sql" />
+    <Content Include="Scripts\PAISES.sql" />
+    <Content Include="Scripts\Seeder.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

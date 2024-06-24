@@ -14,6 +14,7 @@ namespace Biblioteca.Forms.Auth
     public partial class FrmLogin : Form
     {
         Clases.Helpers helpers = new Clases.Helpers();
+        Clases.Data db = new Clases.Data();
 
         public FrmLogin()
         {
@@ -27,6 +28,7 @@ namespace Biblioteca.Forms.Auth
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            //db.CheckFileConfiguration();
             var home = new Forms.FrmHome();
             home.Show();
             this.Hide();
