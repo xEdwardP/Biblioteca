@@ -60,8 +60,15 @@
             this.BtnRequests = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnGraduados = new System.Windows.Forms.ToolStripButton();
+            this.SstPrincipal = new System.Windows.Forms.StatusStrip();
+            this.LblUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.LblFecha = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.LblBd = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.SstPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -327,6 +334,57 @@
             this.BtnGraduados.Size = new System.Drawing.Size(111, 28);
             this.BtnGraduados.Text = "GRADUADOS";
             // 
+            // SstPrincipal
+            // 
+            this.SstPrincipal.AutoSize = false;
+            this.SstPrincipal.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SstPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LblUser,
+            this.toolStripSeparator10,
+            this.LblFecha,
+            this.toolStripSeparator11,
+            this.LblBd});
+            this.SstPrincipal.Location = new System.Drawing.Point(0, 413);
+            this.SstPrincipal.Name = "SstPrincipal";
+            this.SstPrincipal.Size = new System.Drawing.Size(1087, 37);
+            this.SstPrincipal.TabIndex = 8;
+            this.SstPrincipal.Text = "statusStrip1";
+            // 
+            // LblUser
+            // 
+            this.LblUser.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUser.Image = ((System.Drawing.Image)(resources.GetObject("LblUser.Image")));
+            this.LblUser.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.LblUser.Name = "LblUser";
+            this.LblUser.Size = new System.Drawing.Size(38, 32);
+            this.LblUser.Text = "---";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 37);
+            // 
+            // LblFecha
+            // 
+            this.LblFecha.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.Image = ((System.Drawing.Image)(resources.GetObject("LblFecha.Image")));
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.Size = new System.Drawing.Size(38, 32);
+            this.LblFecha.Text = "---";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 37);
+            // 
+            // LblBd
+            // 
+            this.LblBd.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBd.Image = ((System.Drawing.Image)(resources.GetObject("LblBd.Image")));
+            this.LblBd.Name = "LblBd";
+            this.LblBd.Size = new System.Drawing.Size(38, 32);
+            this.LblBd.Text = "---";
+            // 
             // FrmHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -334,6 +392,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1087, 450);
+            this.Controls.Add(this.SstPrincipal);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,6 +411,8 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.SstPrincipal.ResumeLayout(false);
+            this.SstPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +451,11 @@
         private System.Windows.Forms.ToolStripButton BtnRequests;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton BtnGraduados;
+        private System.Windows.Forms.StatusStrip SstPrincipal;
+        private System.Windows.Forms.ToolStripStatusLabel LblUser;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripStatusLabel LblFecha;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripStatusLabel LblBd;
     }
 }

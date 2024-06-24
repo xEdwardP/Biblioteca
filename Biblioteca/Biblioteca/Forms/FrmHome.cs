@@ -20,7 +20,7 @@ namespace Biblioteca.Forms
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
-
+            SetInfoInicial();
         }
 
         private void BtnAuthors_Click(object sender, EventArgs e)
@@ -64,6 +64,15 @@ namespace Biblioteca.Forms
             var books = new Forms.Books.FrmBooks();
             books.MdiParent = this;
             books.Show();
+        }
+
+        private void SetInfoInicial()
+        {
+            //this.Text = Clases.Env.APPNAME + " | MENU PRINCIPAL | " + Clases.Auth.REALNAME;
+            Text = " | MENU PRINCIPAL | ";
+            //LblUser.Text = "[" + Clases.Auth.USER + "]" + Clases.Auth.REALNAME;
+            LblUser.Text = "[ USUARIO ANONIMO ]";
+            LblFecha.Text = DateTime.Today.ToLongDateString().ToUpper();
         }
     }
 }

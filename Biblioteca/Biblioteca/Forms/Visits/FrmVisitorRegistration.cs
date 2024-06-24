@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Biblioteca.Forms.Employees
+namespace Biblioteca.Forms.Visits
 {
-    public partial class FrmEmployees : Form
+    public partial class FrmVisitorRegistration : Form
     {
-        public FrmEmployees()
+        public FrmVisitorRegistration()
         {
             InitializeComponent();
-        }
-
-        private void FrmEmployees_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
