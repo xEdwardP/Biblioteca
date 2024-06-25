@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -139,7 +139,7 @@
             // 
             this.TxtIdApplicant.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtIdApplicant.Location = new System.Drawing.Point(185, 76);
-            this.TxtIdApplicant.MaxLength = 150;
+            this.TxtIdApplicant.MaxLength = 9;
             this.TxtIdApplicant.Name = "TxtIdApplicant";
             this.TxtIdApplicant.Size = new System.Drawing.Size(202, 27);
             this.TxtIdApplicant.TabIndex = 51;
@@ -170,7 +170,7 @@
             // 
             this.TxtIdBook.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtIdBook.Location = new System.Drawing.Point(185, 109);
-            this.TxtIdBook.MaxLength = 150;
+            this.TxtIdBook.MaxLength = 9;
             this.TxtIdBook.Name = "TxtIdBook";
             this.TxtIdBook.Size = new System.Drawing.Size(202, 27);
             this.TxtIdBook.TabIndex = 53;
@@ -261,8 +261,8 @@
             this.DgvData.AllowUserToDeleteRows = false;
             this.DgvData.AllowUserToResizeColumns = false;
             this.DgvData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvData.Location = new System.Drawing.Point(16, 180);
             this.DgvData.Name = "DgvData";

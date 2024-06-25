@@ -94,6 +94,18 @@
     <Compile Include="Forms\Loans\FrmLoans.Designer.cs">
       <DependentUpon>FrmLoans.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Loans\FrmSearchBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Loans\FrmSearchBook.Designer.cs">
+      <DependentUpon>FrmSearchBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Loans\FrmSearchMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Loans\FrmSearchMember.Designer.cs">
+      <DependentUpon>FrmSearchMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Memberships\FrmMemberships.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Loans\FrmLoans.resx">
       <DependentUpon>FrmLoans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Loans\FrmSearchBook.resx">
+      <DependentUpon>FrmSearchBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Loans\FrmSearchMember.resx">
+      <DependentUpon>FrmSearchMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Memberships\FrmMemberships.resx">
       <DependentUpon>FrmMemberships.cs</DependentUpon>

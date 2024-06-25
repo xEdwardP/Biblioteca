@@ -58,7 +58,7 @@ namespace Biblioteca.Forms.Memberships
             if (errors == 0)
             {
                 SetValues();
-                string fields = "";
+                string fields = "IDMEMBRESIA, MEMBRESIA, LIMITELIB";
                 string values = "";
 
                 if (repository.Save("MEMBRESIAS", fields, values) > 0)

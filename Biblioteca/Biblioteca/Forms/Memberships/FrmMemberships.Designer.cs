@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMemberships));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,10 +43,8 @@
             this.DcLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtLimit = new System.Windows.Forms.TextBox();
-            this.TxtDeadline = new System.Windows.Forms.TextBox();
             this.TxtMembership = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -68,7 +66,7 @@
             // BtnSearch
             // 
             this.BtnSearch.Image = ((System.Drawing.Image)(resources.GetObject("BtnSearch.Image")));
-            this.BtnSearch.Location = new System.Drawing.Point(656, 196);
+            this.BtnSearch.Location = new System.Drawing.Point(656, 157);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(27, 27);
             this.BtnSearch.TabIndex = 40;
@@ -76,7 +74,7 @@
             // 
             // TxtSearch
             // 
-            this.TxtSearch.Location = new System.Drawing.Point(89, 196);
+            this.TxtSearch.Location = new System.Drawing.Point(89, 157);
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(561, 27);
             this.TxtSearch.TabIndex = 38;
@@ -85,7 +83,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 199);
+            this.label7.Location = new System.Drawing.Point(12, 160);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 19);
             this.label7.TabIndex = 37;
@@ -97,23 +95,23 @@
             this.DgvData.AllowUserToDeleteRows = false;
             this.DgvData.AllowUserToResizeColumns = false;
             this.DgvData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DcCodigo,
             this.DcMembresia,
             this.DcPlazo,
             this.DcLimite});
-            this.DgvData.Location = new System.Drawing.Point(16, 236);
+            this.DgvData.Location = new System.Drawing.Point(16, 197);
             this.DgvData.Name = "DgvData";
             this.DgvData.ReadOnly = true;
             this.DgvData.RowHeadersVisible = false;
@@ -136,8 +134,8 @@
             // 
             // DcPlazo
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DcPlazo.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DcPlazo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DcPlazo.HeaderText = "PLAZO DIAS";
             this.DcPlazo.Name = "DcPlazo";
             this.DcPlazo.ReadOnly = true;
@@ -145,8 +143,8 @@
             // 
             // DcLimite
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DcLimite.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DcLimite.DefaultCellStyle = dataGridViewCellStyle4;
             this.DcLimite.HeaderText = "LIMITE LIBROS";
             this.DcLimite.Name = "DcLimite";
             this.DcLimite.ReadOnly = true;
@@ -157,7 +155,7 @@
             this.label6.BackColor = System.Drawing.Color.Teal;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(-4, 161);
+            this.label6.Location = new System.Drawing.Point(-4, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(347, 28);
             this.label6.TabIndex = 35;
@@ -166,44 +164,27 @@
             // 
             // TxtLimit
             // 
-            this.TxtLimit.Location = new System.Drawing.Point(476, 112);
+            this.TxtLimit.Location = new System.Drawing.Point(562, 79);
             this.TxtLimit.Name = "TxtLimit";
-            this.TxtLimit.Size = new System.Drawing.Size(207, 27);
+            this.TxtLimit.Size = new System.Drawing.Size(121, 27);
             this.TxtLimit.TabIndex = 34;
-            // 
-            // TxtDeadline
-            // 
-            this.TxtDeadline.Location = new System.Drawing.Point(142, 112);
-            this.TxtDeadline.Name = "TxtDeadline";
-            this.TxtDeadline.Size = new System.Drawing.Size(201, 27);
-            this.TxtDeadline.TabIndex = 33;
             // 
             // TxtMembership
             // 
             this.TxtMembership.Location = new System.Drawing.Point(142, 79);
             this.TxtMembership.Name = "TxtMembership";
-            this.TxtMembership.Size = new System.Drawing.Size(541, 27);
+            this.TxtMembership.Size = new System.Drawing.Size(290, 27);
             this.TxtMembership.TabIndex = 32;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(352, 115);
+            this.label5.Location = new System.Drawing.Point(438, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 19);
             this.label5.TabIndex = 30;
             this.label5.Text = "LIMITE LIBROS:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 19);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "PLAZO EN DIAS:";
             // 
             // label3
             // 
@@ -243,7 +224,7 @@
             this.BtnClose});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(700, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(703, 31);
             this.toolStrip1.TabIndex = 25;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -343,17 +324,15 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(700, 412);
+            this.ClientSize = new System.Drawing.Size(703, 373);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.DgvData);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TxtLimit);
-            this.Controls.Add(this.TxtDeadline);
             this.Controls.Add(this.TxtMembership);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
@@ -386,10 +365,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DcLimite;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxtLimit;
-        private System.Windows.Forms.TextBox TxtDeadline;
         private System.Windows.Forms.TextBox TxtMembership;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;

@@ -12,9 +12,9 @@ namespace Biblioteca.Clases
     public class Conexion
     {
         //Cadena de Conexion -- > Instancia
-        public static string cadena_de_conexion = @"Server=" + App.SERVER + ";Database="+App.DATABASE+";Trusted_Connection=True;MultipleActiveResultSets=true";
-        public static string cadena = @"Server=" + App.SERVER + "; Trusted_Connection=True;MultipleActiveResultSets=true";
-        //public static string cadena_de_conexion = @"Server=" + Env.SERVER + ";Database=" + Env.DATABASE + ";User Id=" + Env.USERID + ";Password=" + Env.PASSWORD + ";";
+        //public static string cadena_de_conexion = @"Server=" + App.SERVER + ";Database="+App.DATABASE+";Trusted_Connection=True;MultipleActiveResultSets=true";
+       // public static string cadena = @"Server=" + App.SERVER + "; Trusted_Connection=True;MultipleActiveResultSets=true";
+        public static string cadena_de_conexion = @"Server=" + App.SERVER + ";Database=" + App.DATABASE + ";User Id=" + App.USERID + ";Password=" + App.PASSWORD + ";";
         public static SqlConnection ConSql = new SqlConnection(cadena_de_conexion);
 
         //Metodo OpenConnection --> Abre la conexion a la base de datos

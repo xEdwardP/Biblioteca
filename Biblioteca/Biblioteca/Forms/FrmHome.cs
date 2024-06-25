@@ -93,5 +93,12 @@ namespace Biblioteca.Forms
             loans.MdiParent = this;
             loans.Show();
         }
+
+        private void BtnMembers_Click(object sender, EventArgs e)
+        {
+            var members = new Forms.Members.FrmMembers();
+            members.MdiParent = this;
+            members.Show();
+        }
     }
 }

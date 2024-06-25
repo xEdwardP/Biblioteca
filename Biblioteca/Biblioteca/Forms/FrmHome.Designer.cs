@@ -59,7 +59,7 @@
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnRequests = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnGraduados = new System.Windows.Forms.ToolStripButton();
+            this.BtnMembers = new System.Windows.Forms.ToolStripButton();
             this.SstPrincipal = new System.Windows.Forms.StatusStrip();
             this.LblUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -204,7 +204,7 @@
             this.toolStripSeparator12,
             this.BtnRequests,
             this.toolStripSeparator13,
-            this.BtnGraduados});
+            this.BtnMembers});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1087, 31);
@@ -325,16 +325,17 @@
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnGraduados
+            // BtnMembers
             // 
-            this.BtnGraduados.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGraduados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnGraduados.Image = ((System.Drawing.Image)(resources.GetObject("BtnGraduados.Image")));
-            this.BtnGraduados.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnGraduados.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnGraduados.Name = "BtnGraduados";
-            this.BtnGraduados.Size = new System.Drawing.Size(111, 28);
-            this.BtnGraduados.Text = "GRADUADOS";
+            this.BtnMembers.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnMembers.Image = ((System.Drawing.Image)(resources.GetObject("BtnMembers.Image")));
+            this.BtnMembers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnMembers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMembers.Name = "BtnMembers";
+            this.BtnMembers.Size = new System.Drawing.Size(99, 28);
+            this.BtnMembers.Text = "MIEMBROS";
+            this.BtnMembers.Click += new System.EventHandler(this.BtnMembers_Click);
             // 
             // SstPrincipal
             // 
@@ -452,7 +453,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripButton BtnRequests;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripButton BtnGraduados;
+        private System.Windows.Forms.ToolStripButton BtnMembers;
         private System.Windows.Forms.StatusStrip SstPrincipal;
         private System.Windows.Forms.ToolStripStatusLabel LblUser;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
