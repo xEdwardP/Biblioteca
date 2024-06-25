@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -55,6 +55,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.BtnManageLoan = new System.Windows.Forms.Button();
             this.BtnCleanIdBook = new System.Windows.Forms.Button();
+            this.DcCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcMember = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcDeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.SuspendLayout();
@@ -261,10 +269,15 @@
             this.DgvData.AllowUserToDeleteRows = false;
             this.DgvData.AllowUserToResizeColumns = false;
             this.DgvData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvData.Location = new System.Drawing.Point(16, 180);
+            this.DgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DcCode,
+            this.DcMember,
+            this.DcBook,
+            this.DcDeadline});
+            this.DgvData.Location = new System.Drawing.Point(16, 221);
             this.DgvData.Name = "DgvData";
             this.DgvData.ReadOnly = true;
             this.DgvData.RowHeadersVisible = false;
@@ -294,7 +307,7 @@
             // BtnManageLoan
             // 
             this.BtnManageLoan.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnManageLoan.Location = new System.Drawing.Point(16, 417);
+            this.BtnManageLoan.Location = new System.Drawing.Point(16, 458);
             this.BtnManageLoan.Name = "BtnManageLoan";
             this.BtnManageLoan.Size = new System.Drawing.Size(201, 27);
             this.BtnManageLoan.TabIndex = 67;
@@ -311,11 +324,84 @@
             this.BtnCleanIdBook.TabIndex = 68;
             this.BtnCleanIdBook.UseVisualStyleBackColor = true;
             // 
+            // DcCode
+            // 
+            this.DcCode.HeaderText = "CODIGO";
+            this.DcCode.Name = "DcCode";
+            this.DcCode.ReadOnly = true;
+            this.DcCode.Width = 150;
+            // 
+            // DcMember
+            // 
+            this.DcMember.HeaderText = "ESTUDIANTE";
+            this.DcMember.Name = "DcMember";
+            this.DcMember.ReadOnly = true;
+            this.DcMember.Width = 270;
+            // 
+            // DcBook
+            // 
+            this.DcBook.HeaderText = "LIBRO";
+            this.DcBook.Name = "DcBook";
+            this.DcBook.ReadOnly = true;
+            this.DcBook.Width = 250;
+            // 
+            // DcDeadline
+            // 
+            this.DcDeadline.HeaderText = "F. ENTREGA";
+            this.DcDeadline.Name = "DcDeadline";
+            this.DcDeadline.ReadOnly = true;
+            this.DcDeadline.Width = 150;
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.Image = ((System.Drawing.Image)(resources.GetObject("BtnSearch.Image")));
+            this.BtnSearch.Location = new System.Drawing.Point(823, 183);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(27, 27);
+            this.BtnSearch.TabIndex = 72;
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // TxtSearch
+            // 
+            this.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtSearch.Location = new System.Drawing.Point(523, 183);
+            this.TxtSearch.MaxLength = 150;
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(294, 27);
+            this.TxtSearch.TabIndex = 71;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(444, 186);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 19);
+            this.label10.TabIndex = 70;
+            this.label10.Text = "BUSCAR:";
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Teal;
+            this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(-4, 181);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(444, 28);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "     PRESTAMOS ACTIVOS";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FrmLoans
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(870, 447);
+            this.ClientSize = new System.Drawing.Size(870, 494);
+            this.Controls.Add(this.BtnSearch);
+            this.Controls.Add(this.TxtSearch);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.BtnCleanIdBook);
             this.Controls.Add(this.BtnManageLoan);
             this.Controls.Add(this.TxtComentary);
@@ -378,5 +464,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnManageLoan;
         private System.Windows.Forms.Button BtnCleanIdBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcMember;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcDeadline;
+        private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.TextBox TxtSearch;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

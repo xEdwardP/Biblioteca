@@ -153,6 +153,12 @@ namespace Biblioteca.Forms.Loans
             }
         }
 
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string search = helpers.CleanStr(TxtSearch.Text.Trim());
+            GetLoans(search);
+        }
+
         private void SetValues()
         {
             idmember = helpers.CleanStr(TxtIdApplicant.Text.Trim());
@@ -239,6 +245,40 @@ namespace Biblioteca.Forms.Loans
             if(cond1 > 0 && cond2 > 0)
             {
                 helpers.MsgSuccess("SE DISMINUYERON LAS EXISTENCIAS!");
+            }
+        }
+
+        // Metodo GetLoans -> Muestra los registros en el data gried view
+        private void GetLoans(string search = "")
+        {
+            string condition = "", fields = "IDPRESTAMO, IDMIEMBRO, IDLIBRO, FENTREGA";
+
+            if(search != "")
+            {
+                condition = "IDMIEMBRO LIKE '%" + search + "%'";
+            }
+
+            DataTable data = repository.Find("PRESTAMOS", fields, condition);
+            DgvData.Rows.Clear();
+
+            string _idloan, _idmember, _idbook, _deadline;
+
+            if(data.Rows.Count > 0)
+            {
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    _idloan = data.Rows[i][0].ToString();
+                    _idmember = data.Rows[i][1].ToString();
+                    _idbook = data.Rows[i][2].ToString();
+                    _deadline = data.Rows[i][3].ToString();
+
+                    DgvData.Rows.Add(_idloan, _idmember, _idbook, _deadline);
+                }
+                data.Dispose();
+            }
+            else
+            {
+                helpers.MsgWarning(Clases.Messages.MsgNotFound);
             }
         }
     }
