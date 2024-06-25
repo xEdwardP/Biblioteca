@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace Biblioteca.Forms.Employees
 {
@@ -18,7 +20,8 @@ namespace Biblioteca.Forms.Employees
 
         private Clases.Repository repository = new Clases.Repository();
 
-        private string code, document, name, lastname, adress, email, genre, phone, dateb, job, stateemployee;
+        string code, document, name, lastname, adress, email, genre, phone, fechanac, job, stateemployee;
+        string datetoday = DateTime.Today.ToShortDateString().ToString();
 
         double salary;
 
@@ -34,6 +37,7 @@ namespace Biblioteca.Forms.Employees
         {
             Text = Clases.App.AppName + "| Empleados | ";
             StartForm();
+            Seed();
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -49,12 +53,48 @@ namespace Biblioteca.Forms.Employees
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            ValidateData();
 
+            if(errors == 0)
+            {
+                SetValues();
+
+                string fields = "IDEMP, DOCEMP, NOMEMP, APEEMP, DIREMP, EMAILEMP, SEXO, TELEMP, FNACEMP, CARGOEMP, SALARIOEMP";
+                string values = "'" + code + "', '" + document + "', '" + name + "', '" + lastname + "', '" + adress + "', '" + email + "','" + genre + "', '" + phone + "', '" + fechanac + "', '" + job + "', " + salary + "";
+
+                if (repository.Save("EMPLEADOS", fields, values) > 0)
+                {
+                    helpers.MsgSuccess(Clases.Messages.MsgSave);
+                    repository.SetLast(idmodule);
+                    Clean();
+                    StartForm();
+                }
+            }
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            ValidateData();
 
+            if (errors == 0)
+            {
+                SetValues();
+
+                if (helpers.MsgQuestion(Clases.Messages.MsgUpdate) == "S")
+                {
+                    //string id = code;
+                    string values = "DOCEMP='" + document + "', NOMEMP='" + name + "', APEEMP='" + lastname + "', DIREMP='" + adress + "', EMAILEMP='" + email + "'," +
+                        "SEXO='" + genre + "', TELEMP='" + phone + "', FNACEMP='" + fechanac + "', CARGOEMP='" + job + "', SALARIOEMP=" + salary + "";
+                    string condition = "IDEMP='" + code + "'";
+
+                    if (repository.Update("EMPLEADOS", values, condition) > 0)
+                    {
+                        helpers.MsgSuccess(Clases.Messages.MsgUpdatedSuccessfully);
+                        Clean();
+                        StartForm();
+                    }
+                }
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -68,7 +108,17 @@ namespace Biblioteca.Forms.Employees
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            if (helpers.MsgQuestion(Clases.Messages.MsgDelete) == "S")
+            {
+                string condition = "IDEMP='" + code + "'";
 
+                if (repository.Destroy("EMPLEADOS", condition) > 0)
+                {
+                    helpers.MsgSuccess(Clases.Messages.MsgDeletedSuccessfully);
+                    Clean();
+                    StartForm();
+                }
+            }
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -88,6 +138,19 @@ namespace Biblioteca.Forms.Employees
             DgvData.Rows.Clear();
         }
 
+        private void DgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgvData.Rows.Count > 0)
+            {
+                string id = DgvData.CurrentRow.Cells[0].Value.ToString();
+                GetInfoEmployees(id);
+
+                StateControls(true);
+                TxtDocument.Enabled = false;
+                TxtName.Focus();
+            }
+        }
+
         // Metodo StateButtons -> Habilita y deshabilita los botones
         private void StateButtons(bool stnew, bool stsave, bool stupdate, bool stdelete, bool stcancel, bool stexit, bool stsearch)
         {
@@ -98,6 +161,7 @@ namespace Biblioteca.Forms.Employees
             BtnCancel.Enabled = stcancel;
             BtnClose.Enabled = stexit;
             BtnSearch.Enabled = stsearch;
+            BtnCancelSearch.Enabled = stsearch;
         }
 
         // Metodo StateControls -> Habilita y deshabilita los controles
@@ -110,7 +174,7 @@ namespace Biblioteca.Forms.Employees
             TxtEmail.Enabled = state;
             CmbGenre.Enabled = state;
             TxtPhone.Enabled = state;
-            DtpDateBirth.Enabled = state;
+            DtpDateB.Enabled = state;
             CmbJob.Enabled = state;
             TxtSalary.Enabled = state;
         }
@@ -125,8 +189,8 @@ namespace Biblioteca.Forms.Employees
             }
             CmbGenre.SelectedIndex = -1;
             CmbJob.SelectedIndex = -1;
-            var datetoday = DateTime.Now;
-            DtpDateBirth.Text = datetoday.ToString();
+            var datetoday = DateTime.Today.ToShortDateString();
+            DtpDateB.Text = datetoday.ToString();
         }
 
         // Metodo AutoGenCode -> Genera los codigos para autores
@@ -141,7 +205,7 @@ namespace Biblioteca.Forms.Employees
             DgvData.Refresh();
             StateButtons(true, false, false, false, true, true, true);
 
-            Clean();
+            //Clean();
 
             StateControls(false);
             StateEmployee(false);
@@ -152,12 +216,13 @@ namespace Biblioteca.Forms.Employees
         private void ValidateData()
         {
             errors = 0;
-            var datetoday = DateTime.Now;
+            string datetoday = DateTime.Today.ToShortDateString().ToString();
+            //helpers.MsgInfo(datetoday);
 
-            if (helpers.CleanStr(TxtDocument.Text.Trim()).Length == 0)
+            if (helpers.CleanStr(TxtDocument.Text.Trim()).Length < 13)
             {
                 TxtDocument.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE UN NUMERO DE DOCUMENTO VALIDO!");
                 errors++;
                 return;
             }
@@ -165,7 +230,7 @@ namespace Biblioteca.Forms.Employees
             if (helpers.CleanStr(TxtName.Text.Trim()).Length == 0)
             {
                 TxtName.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL NOMBRE DE EL EMPLEADO!");
                 errors++;
                 return;
             }
@@ -173,7 +238,7 @@ namespace Biblioteca.Forms.Employees
             if (helpers.CleanStr(TxtLastName.Text.Trim()).Length == 0)
             {
                 TxtLastName.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE LOS APELLIDOS DE EL EMPLEADO!");
                 errors++;
                 return;
             }
@@ -181,7 +246,7 @@ namespace Biblioteca.Forms.Employees
             if (helpers.CleanStr(TxtAdress.Text.Trim()).Length == 0)
             {
                 TxtAdress.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE LA DIRECCION DE EL EMPLEADO!");
                 errors++;
                 return;
             }
@@ -189,7 +254,7 @@ namespace Biblioteca.Forms.Employees
             if (helpers.CleanStr(TxtEmail.Text.Trim()).Length == 0)
             {
                 TxtEmail.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL EMAIL DE EL EMPLEADO!");
                 errors++;
                 return;
             }
@@ -197,7 +262,7 @@ namespace Biblioteca.Forms.Employees
             if (CmbGenre.Text == "")
             {
                 CmbGenre.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("SELECCIONE EL SEXO DEL EMPLEADO!");
                 errors++;
                 return;
             }
@@ -205,31 +270,31 @@ namespace Biblioteca.Forms.Employees
             if (helpers.CleanStr(TxtPhone.Text.Trim()).Length == 0)
             {
                 TxtPhone.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL NUMERO DEL TELEFONO!");
                 errors++;
                 return;
             }
 
-            if (DtpDateBirth.Text == datetoday.ToString())
-            {
-                DtpDateBirth.Focus();
-                helpers.MsgWarning("");
-                errors++;
-                return;
-            }
+            //if (DtpDateBirth.Text == datetoday)
+            //{
+            //    DtpDateBirth.Focus();
+            //    helpers.MsgWarning("INGRESE UNA FECHA DE NACIMIENTO VALIDA!");
+            //    errors++;
+            //    return;
+            //}
 
             if (CmbJob.Text == "")
             {
                 CmbJob.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("DEBE ELEGIR UN CARGO DE LA LISTA DESPLEGABLE!");
                 errors++;
                 return;
             }
 
-            if (helpers.CleanStr(TxtSalary.Text.Trim()).Length == 0)
+            if (helpers.CleanStr(TxtSalary.Text.Trim()).Length == 0 || Convert.ToDouble(helpers.CleanStr(TxtSalary.Text.Trim())) <= 0)
             {
                 TxtSalary.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL SALARIO CON UN VALOR VALIDO!");
                 errors++;
                 return;
             }
@@ -244,7 +309,8 @@ namespace Biblioteca.Forms.Employees
             email = helpers.CleanStr(TxtEmail.Text.Trim());
             genre = CmbGenre.Text.Trim();
             phone = helpers.CleanStr(TxtPhone.Text.Trim());
-            dateb = DtpDateBirth.Text;
+            //dateb = DtpDateBirth.Text;
+            fechanac = DtpDateB.Text;
             job = CmbJob.Text.Trim();
             salary = Convert.ToDouble(helpers.CleanStr(TxtSalary.Text.Trim()));
         }
@@ -252,11 +318,11 @@ namespace Biblioteca.Forms.Employees
         // Metodo GetPublishers -> Muestra los registros en el data gried view
         private void GetEmployees(string search = "")
         {
-            string condition = "", fields = "IDEMP, DOCUMENTO, NOMBRE + SPACE(1) + APELLIDOS AS 'NAME', ESTADO";
+            string condition = "", fields = "IDEMP, DOCEMP, NOMEMP + SPACE(1) + APEEMP AS 'NAME', ESTADO";
 
             if (search != "")
             {
-                condition = "NOMBRE LIKE '%" + search + "%'";
+                condition = "NOMEMP LIKE '%" + search + "%'";
             }
 
             DataTable data = repository.Find("EMPLEADOS", fields, condition);
@@ -291,16 +357,16 @@ namespace Biblioteca.Forms.Employees
             {
                 DataRow info = data.Rows[0];
                 code = info["IDEMP"].ToString();
-                TxtDocument.Text = info["DNI"].ToString();
-                TxtName.Text = info["NOMBRE"].ToString();
-                TxtLastName.Text = info["APELLIDOS"].ToString();
-                TxtAdress.Text = info["DIREDIT"].ToString();
+                TxtDocument.Text = info["DOCEMP"].ToString();
+                TxtName.Text = info["NOMEMP"].ToString();
+                TxtLastName.Text = info["APEEMP"].ToString();
+                TxtAdress.Text = info["DIREMP"].ToString();
                 TxtEmail.Text = info["EMAILEMP"].ToString();
                 CmbGenre.Text = info["SEXO"].ToString();
                 TxtPhone.Text = info["TELEMP"].ToString();
-                DtpDateBirth.Text = info["FNACIMIENTO"].ToString();
-                CmbJob.SelectedValue = info["IDCARGO"].ToString();
-                TxtSalary.Text = info["SALARY"].ToString();
+                DtpDateB.Text = info["FNACEMP"].ToString();
+                CmbJob.Text = info["CARGOEMP"].ToString();
+                TxtSalary.Text = info["SALARIOEMP"].ToString();
                 CmbStateEmployee.Text = info["ESTADO"].ToString();
                 StateEmployee(true);
 
@@ -318,6 +384,19 @@ namespace Biblioteca.Forms.Employees
             LblStaetEmployee.Visible = state;
 
             CmbStateEmployee.Enabled = state;
+        }
+
+        private void Seed()
+        {
+            TxtDocument.Text = "0401200000128";
+            TxtName.Text = "JUAN";
+            TxtLastName.Text = "BODOQUE";
+            TxtAdress.Text = "SANTA ROSA DE COPAN";
+            TxtEmail.Text = "correo@gmail.com";
+            CmbGenre.Text = "MASCULINO";
+            CmbJob.Text = "GERENTE";
+            TxtPhone.Text = "99887766";
+            TxtSalary.Text = "12000";
         }
     }
 }

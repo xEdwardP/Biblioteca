@@ -16,5 +16,30 @@ namespace Biblioteca.Forms.Loans
         {
             InitializeComponent();
         }
+
+        private void FrmLoans_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -80,6 +81,17 @@ namespace Biblioteca.Forms
             var employee = new Forms.Employees.FrmEmployees();
             employee.MdiParent = this;
             employee.Show();
+        }
+
+        private void BtnMemberships_Click(object sender, EventArgs e)
+        {
+            //var memberships = new Forms.Memberships.FrmMemberships();
+            //memberships.MdiParent = this;
+            //memberships.Show();
+
+            var loans = new Forms.Loans.FrmLoans();
+            loans.MdiParent = this;
+            loans.Show();
         }
     }
 }

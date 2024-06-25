@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMemberships));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -97,16 +97,16 @@
             this.DgvData.AllowUserToDeleteRows = false;
             this.DgvData.AllowUserToResizeColumns = false;
             this.DgvData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DcCodigo,
@@ -136,8 +136,8 @@
             // 
             // DcPlazo
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DcPlazo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DcPlazo.DefaultCellStyle = dataGridViewCellStyle27;
             this.DcPlazo.HeaderText = "PLAZO DIAS";
             this.DcPlazo.Name = "DcPlazo";
             this.DcPlazo.ReadOnly = true;
@@ -145,8 +145,8 @@
             // 
             // DcLimite
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DcLimite.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DcLimite.DefaultCellStyle = dataGridViewCellStyle28;
             this.DcLimite.HeaderText = "LIMITE LIBROS";
             this.DcLimite.Name = "DcLimite";
             this.DcLimite.ReadOnly = true;
@@ -256,6 +256,7 @@
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(76, 28);
             this.BtnNew.Text = "NUEVO";
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // toolStripSeparator1
             // 
@@ -271,6 +272,7 @@
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(94, 28);
             this.BtnSave.Text = "GUARDAR";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // toolStripSeparator2
             // 
@@ -286,6 +288,7 @@
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(107, 28);
             this.BtnUpdate.Text = "ACTUALIZAR";
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // toolStripSeparator3
             // 
@@ -301,6 +304,7 @@
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(94, 28);
             this.BtnCancel.Text = "CANCELAR";
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // toolStripSeparator4
             // 
@@ -316,6 +320,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(91, 28);
             this.BtnDelete.Text = "ELIMINAR";
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // toolStripSeparator5
             // 
@@ -332,6 +337,7 @@
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(68, 28);
             this.BtnClose.Text = "SALIR";
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // FrmMemberships
             // 
@@ -359,6 +365,7 @@
             this.Name = "FrmMemberships";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---";
+            this.Load += new System.EventHandler(this.FrmMemberships_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

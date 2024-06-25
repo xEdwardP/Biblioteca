@@ -21,9 +21,9 @@ namespace Biblioteca.Forms.Books
         private Repository repository = new Clases.Repository();
 
         // Variables Globales
-        private string code, title, description, idauthor, idgenre, idpublisher, edition, yearpub, isbn, stock;
+        string code, title, description, idauthor, idgenre, idpublisher, edition, yearpub, isbn, stock;
 
-        private int errors = 0;
+        int errors = 0;
 
         string idmodule = "LIB";
 

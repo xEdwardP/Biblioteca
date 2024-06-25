@@ -55,7 +55,7 @@
             this.BtnBooks = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnExit = new System.Windows.Forms.ToolStripButton();
-            this.BtnMembers = new System.Windows.Forms.ToolStripButton();
+            this.BtnMemberships = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnRequests = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -200,7 +200,7 @@
             this.BtnBooks,
             this.toolStripSeparator4,
             this.BtnExit,
-            this.BtnMembers,
+            this.BtnMemberships,
             this.toolStripSeparator12,
             this.BtnRequests,
             this.toolStripSeparator13,
@@ -292,16 +292,17 @@
             this.BtnExit.Text = "SALIR";
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // BtnMembers
+            // BtnMemberships
             // 
-            this.BtnMembers.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnMembers.Image = ((System.Drawing.Image)(resources.GetObject("BtnMembers.Image")));
-            this.BtnMembers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnMembers.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMembers.Name = "BtnMembers";
-            this.BtnMembers.Size = new System.Drawing.Size(111, 28);
-            this.BtnMembers.Text = "MEMBRESIAS";
+            this.BtnMemberships.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMemberships.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnMemberships.Image = ((System.Drawing.Image)(resources.GetObject("BtnMemberships.Image")));
+            this.BtnMemberships.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnMemberships.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMemberships.Name = "BtnMemberships";
+            this.BtnMemberships.Size = new System.Drawing.Size(111, 28);
+            this.BtnMemberships.Text = "MEMBRESIAS";
+            this.BtnMemberships.Click += new System.EventHandler(this.BtnMemberships_Click);
             // 
             // toolStripSeparator12
             // 
@@ -447,7 +448,7 @@
         private System.Windows.Forms.ToolStripButton BtnBooks;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton BtnExit;
-        private System.Windows.Forms.ToolStripButton BtnMembers;
+        private System.Windows.Forms.ToolStripButton BtnMemberships;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripButton BtnRequests;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;

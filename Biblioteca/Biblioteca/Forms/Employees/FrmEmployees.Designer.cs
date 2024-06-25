@@ -32,6 +32,10 @@
             this.BtnSearch = new System.Windows.Forms.Button();
             this.LblMsg = new System.Windows.Forms.Label();
             this.DgvData = new System.Windows.Forms.DataGridView();
+            this.DcCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DcState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,7 +67,6 @@
             this.TxtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.DtpDateBirth = new System.Windows.Forms.DateTimePicker();
             this.CmbGenre = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.BtnCancelSearch = new System.Windows.Forms.Button();
@@ -71,10 +74,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.CmbStateEmployee = new System.Windows.Forms.ComboBox();
             this.LblStaetEmployee = new System.Windows.Forms.Label();
-            this.DcCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DcDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DcState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtpDateB = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -121,6 +121,35 @@
             this.DgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvData.Size = new System.Drawing.Size(840, 203);
             this.DgvData.TabIndex = 50;
+            this.DgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellDoubleClick);
+            // 
+            // DcCode
+            // 
+            this.DcCode.HeaderText = "CODIGO";
+            this.DcCode.Name = "DcCode";
+            this.DcCode.ReadOnly = true;
+            this.DcCode.Width = 150;
+            // 
+            // DcDocument
+            // 
+            this.DcDocument.HeaderText = "DNI";
+            this.DcDocument.Name = "DcDocument";
+            this.DcDocument.ReadOnly = true;
+            this.DcDocument.Width = 150;
+            // 
+            // DcName
+            // 
+            this.DcName.HeaderText = "NOMBRE";
+            this.DcName.Name = "DcName";
+            this.DcName.ReadOnly = true;
+            this.DcName.Width = 370;
+            // 
+            // DcState
+            // 
+            this.DcState.HeaderText = "ESTADO";
+            this.DcState.Name = "DcState";
+            this.DcState.ReadOnly = true;
+            this.DcState.Width = 150;
             // 
             // TxtSearch
             // 
@@ -163,6 +192,10 @@
             // 
             this.CmbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbJob.FormattingEnabled = true;
+            this.CmbJob.Items.AddRange(new object[] {
+            "GERENTE",
+            "REGISTRO",
+            "ASISTENTE"});
             this.CmbJob.Location = new System.Drawing.Point(110, 275);
             this.CmbJob.Name = "CmbJob";
             this.CmbJob.Size = new System.Drawing.Size(484, 27);
@@ -411,14 +444,6 @@
             this.label11.TabIndex = 55;
             this.label11.Text = "F. NACIMIENTO:";
             // 
-            // DtpDateBirth
-            // 
-            this.DtpDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpDateBirth.Location = new System.Drawing.Point(731, 242);
-            this.DtpDateBirth.Name = "DtpDateBirth";
-            this.DtpDateBirth.Size = new System.Drawing.Size(121, 27);
-            this.DtpDateBirth.TabIndex = 56;
-            // 
             // CmbGenre
             // 
             this.CmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -474,8 +499,9 @@
             this.CmbStateEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbStateEmployee.FormattingEnabled = true;
             this.CmbStateEmployee.Items.AddRange(new object[] {
-            "MASCULINO",
-            "FEMENINO"});
+            "ACTIVO",
+            "EN ESPERA",
+            "INACTIVO"});
             this.CmbStateEmployee.Location = new System.Drawing.Point(458, 46);
             this.CmbStateEmployee.Name = "CmbStateEmployee";
             this.CmbStateEmployee.Size = new System.Drawing.Size(395, 27);
@@ -493,39 +519,20 @@
             this.LblStaetEmployee.Text = "ESTADO:";
             this.LblStaetEmployee.Visible = false;
             // 
-            // DcCode
+            // DtpDateB
             // 
-            this.DcCode.HeaderText = "CODIGO";
-            this.DcCode.Name = "DcCode";
-            this.DcCode.ReadOnly = true;
-            this.DcCode.Width = 150;
-            // 
-            // DcDocument
-            // 
-            this.DcDocument.HeaderText = "DNI";
-            this.DcDocument.Name = "DcDocument";
-            this.DcDocument.ReadOnly = true;
-            this.DcDocument.Width = 150;
-            // 
-            // DcName
-            // 
-            this.DcName.HeaderText = "NOMBRE";
-            this.DcName.Name = "DcName";
-            this.DcName.ReadOnly = true;
-            this.DcName.Width = 370;
-            // 
-            // DcState
-            // 
-            this.DcState.HeaderText = "ESTADO";
-            this.DcState.Name = "DcState";
-            this.DcState.ReadOnly = true;
-            this.DcState.Width = 150;
+            this.DtpDateB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpDateB.Location = new System.Drawing.Point(731, 239);
+            this.DtpDateB.Name = "DtpDateB";
+            this.DtpDateB.Size = new System.Drawing.Size(121, 27);
+            this.DtpDateB.TabIndex = 64;
             // 
             // FrmEmployees
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(865, 579);
+            this.Controls.Add(this.DtpDateB);
             this.Controls.Add(this.CmbStateEmployee);
             this.Controls.Add(this.LblStaetEmployee);
             this.Controls.Add(this.TxtLastName);
@@ -533,7 +540,6 @@
             this.Controls.Add(this.BtnCancelSearch);
             this.Controls.Add(this.CmbGenre);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.DtpDateBirth);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.label10);
@@ -610,7 +616,6 @@
         private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker DtpDateBirth;
         private System.Windows.Forms.ComboBox CmbGenre;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button BtnCancelSearch;
@@ -622,5 +627,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DcDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn DcName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DcState;
+        private System.Windows.Forms.DateTimePicker DtpDateB;
     }
 }

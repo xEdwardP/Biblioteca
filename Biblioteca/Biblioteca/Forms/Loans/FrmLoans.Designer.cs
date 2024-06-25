@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -38,23 +38,23 @@
             this.BtnCancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnClose = new System.Windows.Forms.ToolStripButton();
-            this.TxtAuthor = new System.Windows.Forms.TextBox();
+            this.TxtIdApplicant = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtIdBook = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.DtpFApplicant = new System.Windows.Forms.DateTimePicker();
+            this.DtpFVacant = new System.Windows.Forms.DateTimePicker();
+            this.BtnSearchApplicant = new System.Windows.Forms.Button();
+            this.BtnSearchBook = new System.Windows.Forms.Button();
+            this.BtnCleanApplicant = new System.Windows.Forms.Button();
             this.DgvData = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtComentary = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BtnManageLoan = new System.Windows.Forms.Button();
+            this.BtnCleanIdBook = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,7 @@
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(76, 28);
             this.BtnNew.Text = "NUEVO";
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // toolStripSeparator1
             // 
@@ -99,6 +100,7 @@
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(94, 28);
             this.BtnSave.Text = "GUARDAR";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // toolStripSeparator2
             // 
@@ -114,6 +116,7 @@
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(94, 28);
             this.BtnCancel.Text = "CANCELAR";
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // toolStripSeparator4
             // 
@@ -130,15 +133,16 @@
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(68, 28);
             this.BtnClose.Text = "SALIR";
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // TxtAuthor
+            // TxtIdApplicant
             // 
-            this.TxtAuthor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtAuthor.Location = new System.Drawing.Point(185, 76);
-            this.TxtAuthor.MaxLength = 150;
-            this.TxtAuthor.Name = "TxtAuthor";
-            this.TxtAuthor.Size = new System.Drawing.Size(202, 27);
-            this.TxtAuthor.TabIndex = 51;
+            this.TxtIdApplicant.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtIdApplicant.Location = new System.Drawing.Point(185, 76);
+            this.TxtIdApplicant.MaxLength = 150;
+            this.TxtIdApplicant.Name = "TxtIdApplicant";
+            this.TxtIdApplicant.Size = new System.Drawing.Size(202, 27);
+            this.TxtIdApplicant.TabIndex = 51;
             // 
             // label3
             // 
@@ -162,14 +166,14 @@
             this.label1.Text = "     DATOS GENERALES DEL PRESTAMO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // TxtIdBook
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(185, 109);
-            this.textBox1.MaxLength = 150;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 27);
-            this.textBox1.TabIndex = 53;
+            this.TxtIdBook.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtIdBook.Location = new System.Drawing.Point(185, 109);
+            this.TxtIdBook.MaxLength = 150;
+            this.TxtIdBook.Name = "TxtIdBook";
+            this.TxtIdBook.Size = new System.Drawing.Size(202, 27);
+            this.TxtIdBook.TabIndex = 53;
             // 
             // label2
             // 
@@ -201,55 +205,55 @@
             this.label6.TabIndex = 57;
             this.label6.Text = "F. ENTREGA:";
             // 
-            // dateTimePicker1
+            // DtpFApplicant
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(745, 73);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(105, 27);
-            this.dateTimePicker1.TabIndex = 58;
+            this.DtpFApplicant.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFApplicant.Location = new System.Drawing.Point(745, 73);
+            this.DtpFApplicant.Name = "DtpFApplicant";
+            this.DtpFApplicant.Size = new System.Drawing.Size(105, 27);
+            this.DtpFApplicant.TabIndex = 58;
             // 
-            // dateTimePicker2
+            // DtpFVacant
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(745, 106);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(105, 27);
-            this.dateTimePicker2.TabIndex = 59;
+            this.DtpFVacant.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFVacant.Location = new System.Drawing.Point(745, 106);
+            this.DtpFVacant.Name = "DtpFVacant";
+            this.DtpFVacant.Size = new System.Drawing.Size(105, 27);
+            this.DtpFVacant.TabIndex = 59;
             // 
-            // button1
+            // BtnSearchApplicant
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(393, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 27);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "BUSCAR POR NOMBRE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnSearchApplicant.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSearchApplicant.Image = ((System.Drawing.Image)(resources.GetObject("BtnSearchApplicant.Image")));
+            this.BtnSearchApplicant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSearchApplicant.Location = new System.Drawing.Point(393, 76);
+            this.BtnSearchApplicant.Name = "BtnSearchApplicant";
+            this.BtnSearchApplicant.Size = new System.Drawing.Size(201, 27);
+            this.BtnSearchApplicant.TabIndex = 60;
+            this.BtnSearchApplicant.Text = "BUSCAR POR NOMBRE";
+            this.BtnSearchApplicant.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnSearchBook
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(393, 109);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(201, 27);
-            this.button2.TabIndex = 61;
-            this.button2.Text = "BUSCAR POR NOMBRE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnSearchBook.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSearchBook.Image = ((System.Drawing.Image)(resources.GetObject("BtnSearchBook.Image")));
+            this.BtnSearchBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSearchBook.Location = new System.Drawing.Point(393, 109);
+            this.BtnSearchBook.Name = "BtnSearchBook";
+            this.BtnSearchBook.Size = new System.Drawing.Size(201, 27);
+            this.BtnSearchBook.TabIndex = 61;
+            this.BtnSearchBook.Text = "BUSCAR POR NOMBRE";
+            this.BtnSearchBook.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtnCleanApplicant
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(600, 76);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 27);
-            this.button3.TabIndex = 62;
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnCleanApplicant.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCleanApplicant.Image = ((System.Drawing.Image)(resources.GetObject("BtnCleanApplicant.Image")));
+            this.BtnCleanApplicant.Location = new System.Drawing.Point(600, 76);
+            this.BtnCleanApplicant.Name = "BtnCleanApplicant";
+            this.BtnCleanApplicant.Size = new System.Drawing.Size(27, 27);
+            this.BtnCleanApplicant.TabIndex = 62;
+            this.BtnCleanApplicant.UseVisualStyleBackColor = true;
             // 
             // DgvData
             // 
@@ -257,8 +261,8 @@
             this.DgvData.AllowUserToDeleteRows = false;
             this.DgvData.AllowUserToResizeColumns = false;
             this.DgvData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvData.Location = new System.Drawing.Point(16, 180);
             this.DgvData.Name = "DgvData";
@@ -268,14 +272,14 @@
             this.DgvData.Size = new System.Drawing.Size(834, 231);
             this.DgvData.TabIndex = 64;
             // 
-            // textBox2
+            // TxtComentary
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(185, 142);
-            this.textBox2.MaxLength = 150;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(665, 27);
-            this.textBox2.TabIndex = 66;
+            this.TxtComentary.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtComentary.Location = new System.Drawing.Point(185, 142);
+            this.TxtComentary.MaxLength = 150;
+            this.TxtComentary.Name = "TxtComentary";
+            this.TxtComentary.Size = new System.Drawing.Size(665, 27);
+            this.TxtComentary.TabIndex = 66;
             // 
             // label4
             // 
@@ -287,46 +291,46 @@
             this.label4.TabIndex = 65;
             this.label4.Text = "COMENTARIO:";
             // 
-            // button5
+            // BtnManageLoan
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(16, 417);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(201, 27);
-            this.button5.TabIndex = 67;
-            this.button5.Text = "GESTIONAR PRESTAMOS";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BtnManageLoan.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnManageLoan.Location = new System.Drawing.Point(16, 417);
+            this.BtnManageLoan.Name = "BtnManageLoan";
+            this.BtnManageLoan.Size = new System.Drawing.Size(201, 27);
+            this.BtnManageLoan.TabIndex = 67;
+            this.BtnManageLoan.Text = "GESTIONAR PRESTAMOS";
+            this.BtnManageLoan.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BtnCleanIdBook
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(600, 109);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(27, 27);
-            this.button4.TabIndex = 68;
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnCleanIdBook.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCleanIdBook.Image = ((System.Drawing.Image)(resources.GetObject("BtnCleanIdBook.Image")));
+            this.BtnCleanIdBook.Location = new System.Drawing.Point(600, 109);
+            this.BtnCleanIdBook.Name = "BtnCleanIdBook";
+            this.BtnCleanIdBook.Size = new System.Drawing.Size(27, 27);
+            this.BtnCleanIdBook.TabIndex = 68;
+            this.BtnCleanIdBook.UseVisualStyleBackColor = true;
             // 
             // FrmLoans
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(870, 447);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.BtnCleanIdBook);
+            this.Controls.Add(this.BtnManageLoan);
+            this.Controls.Add(this.TxtComentary);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DgvData);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.BtnCleanApplicant);
+            this.Controls.Add(this.BtnSearchBook);
+            this.Controls.Add(this.BtnSearchApplicant);
+            this.Controls.Add(this.DtpFVacant);
+            this.Controls.Add(this.DtpFApplicant);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtIdBook);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtAuthor);
+            this.Controls.Add(this.TxtIdApplicant);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
@@ -338,6 +342,7 @@
             this.Name = "FrmLoans";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---";
+            this.Load += new System.EventHandler(this.FrmLoans_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
@@ -356,22 +361,22 @@
         private System.Windows.Forms.ToolStripButton BtnCancel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton BtnClose;
-        private System.Windows.Forms.TextBox TxtAuthor;
+        private System.Windows.Forms.TextBox TxtIdApplicant;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtIdBook;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker DtpFApplicant;
+        private System.Windows.Forms.DateTimePicker DtpFVacant;
+        private System.Windows.Forms.Button BtnSearchApplicant;
+        private System.Windows.Forms.Button BtnSearchBook;
+        private System.Windows.Forms.Button BtnCleanApplicant;
         private System.Windows.Forms.DataGridView DgvData;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtComentary;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BtnManageLoan;
+        private System.Windows.Forms.Button BtnCleanIdBook;
     }
 }

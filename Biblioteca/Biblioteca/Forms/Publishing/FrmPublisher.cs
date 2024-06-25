@@ -17,7 +17,7 @@ namespace Biblioteca.Forms.Publishing
 
         private Clases.Repository repository = new Clases.Repository();
 
-        private string code, publisher, adress, email, phone;
+        string code, publisher, adress, email, phone;
         int errors = 0;
         string idmodule = "EDT";
 
