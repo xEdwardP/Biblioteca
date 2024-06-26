@@ -57,7 +57,7 @@
             this.BtnExit = new System.Windows.Forms.ToolStripButton();
             this.BtnMemberships = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnRequests = new System.Windows.Forms.ToolStripButton();
+            this.BtnLoans = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnMembers = new System.Windows.Forms.ToolStripButton();
             this.SstPrincipal = new System.Windows.Forms.StatusStrip();
@@ -202,7 +202,7 @@
             this.BtnExit,
             this.BtnMemberships,
             this.toolStripSeparator12,
-            this.BtnRequests,
+            this.BtnLoans,
             this.toolStripSeparator13,
             this.BtnMembers});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
@@ -309,16 +309,17 @@
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnRequests
+            // BtnLoans
             // 
-            this.BtnRequests.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRequests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnRequests.Image = ((System.Drawing.Image)(resources.GetObject("BtnRequests.Image")));
-            this.BtnRequests.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnRequests.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnRequests.Name = "BtnRequests";
-            this.BtnRequests.Size = new System.Drawing.Size(110, 28);
-            this.BtnRequests.Text = "SOLICITUDES";
+            this.BtnLoans.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLoans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnLoans.Image = ((System.Drawing.Image)(resources.GetObject("BtnLoans.Image")));
+            this.BtnLoans.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnLoans.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnLoans.Name = "BtnLoans";
+            this.BtnLoans.Size = new System.Drawing.Size(105, 28);
+            this.BtnLoans.Text = "PRESTAMOS";
+            this.BtnLoans.Click += new System.EventHandler(this.BtnLoans_Click);
             // 
             // toolStripSeparator13
             // 
@@ -451,7 +452,7 @@
         private System.Windows.Forms.ToolStripButton BtnExit;
         private System.Windows.Forms.ToolStripButton BtnMemberships;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-        private System.Windows.Forms.ToolStripButton BtnRequests;
+        private System.Windows.Forms.ToolStripButton BtnLoans;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton BtnMembers;
         private System.Windows.Forms.StatusStrip SstPrincipal;

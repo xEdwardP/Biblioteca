@@ -48,7 +48,7 @@ namespace Biblioteca.Clases
         {
             string strout = ""; //Cadena de salida
             //Arreglo caracteres prohibidos
-            string[] forbiddenchars = { "'", "=", "<", ">", ";", "/", "!", "´" };
+            string[] forbiddenchars = { "'", "=", "<", ">", ";", "/", "!", "´", "$"};
             int i, j; //variables para iterar ciclos
             int coinc; //coincidencias
 

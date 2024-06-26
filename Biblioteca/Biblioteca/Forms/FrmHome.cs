@@ -85,13 +85,9 @@ namespace Biblioteca.Forms
 
         private void BtnMemberships_Click(object sender, EventArgs e)
         {
-            //var memberships = new Forms.Memberships.FrmMemberships();
-            //memberships.MdiParent = this;
-            //memberships.Show();
-
-            var loans = new Forms.Loans.FrmLoans();
-            loans.MdiParent = this;
-            loans.Show();
+            var memberships = new Forms.Memberships.FrmMemberships();
+            memberships.MdiParent = this;
+            memberships.Show();
         }
 
         private void BtnMembers_Click(object sender, EventArgs e)
@@ -99,6 +95,13 @@ namespace Biblioteca.Forms
             var members = new Forms.Members.FrmMembers();
             members.MdiParent = this;
             members.Show();
+        }
+
+        private void BtnLoans_Click(object sender, EventArgs e)
+        {
+            var loans = new Forms.Loans.FrmLoans();
+            loans.MdiParent = this;
+            loans.Show();
         }
     }
 }

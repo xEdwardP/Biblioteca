@@ -157,7 +157,7 @@ namespace Biblioteca.Forms.Literary_genres
         private void AutoGenCode()
         {
             code = "GNL" + repository.GetNext(idmodule);
-            helpers.MsgInfo(code.ToString());
+            // helpers.MsgInfo(code.ToString());
         }
 
         private void DgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

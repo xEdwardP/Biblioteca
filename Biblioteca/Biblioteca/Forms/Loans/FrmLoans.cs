@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,7 +34,7 @@ namespace Biblioteca.Forms.Loans
         {
             Text = Clases.App.AppName + "| Prestamos | ";
             StartForm();
-            Seed();
+            // Seed();
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -142,14 +143,9 @@ namespace Biblioteca.Forms.Loans
             if(TxtComentary.Text.Length == 0)
             {
                 TxtComentary.Focus();
+                helpers.MsgWarning("INGRESE UN COMENTARIO!");
                 errors++;
                 return;
-                //if (helpers.MsgQuestion("ESTA SEGURO(A) QUE NO DESEA AGREGAR UN COMENTARIO?") == "N")
-                //{
-                //    TxtComentary.Focus();
-                //    errors++;
-                //    return;
-                //}
             }
         }
 
@@ -194,7 +190,7 @@ namespace Biblioteca.Forms.Loans
             // Verificamos que tenga disponible prestamos
             libdisp = Convert.ToInt16(repository.Hook("LIBDISP", "MIEMBROS", condition));
 
-            helpers.MsgInfo(libdisp.ToString());
+            //helpers.MsgInfo(libdisp.ToString());
 
             if (libdisp == 0)
             {
@@ -251,14 +247,22 @@ namespace Biblioteca.Forms.Loans
         // Metodo GetLoans -> Muestra los registros en el data gried view
         private void GetLoans(string search = "")
         {
-            string condition = "", fields = "IDPRESTAMO, IDMIEMBRO, IDLIBRO, FENTREGA";
+            string condition = "";
+            string query = "A.IDPRESTAMO, B.NOMMIEMBRO + SPACE(1) + B.APEMIEMBRO AS NAME, C.LIBRO, A.FENTREGA, A.ESTADO FROM PRESTAMOS A INNER JOIN MIEMBROS B ON (A.IDMIEMBRO = B.IDMIEMBRO) " +
+                "INNER JOIN LIBROS C ON (A.IDLIBRO = C.IDLIBRO)";
 
-            if(search != "")
+            if (search != "")
             {
-                condition = "IDMIEMBRO LIKE '%" + search + "%'";
+                condition = "B.MIEMBRO LIKE '%" + search + "%'";
+            }
+            else
+            {
+                condition = "A.ESTADO='ACTIVO'";
             }
 
-            DataTable data = repository.Find("PRESTAMOS", fields, condition);
+            //DataTable data = repository.Find("PRESTAMOS", fields, condition);
+            DataTable data = new DataTable();
+            data = repository.JoinTables(query, condition);
             DgvData.Rows.Clear();
 
             string _idloan, _idmember, _idbook, _deadline;

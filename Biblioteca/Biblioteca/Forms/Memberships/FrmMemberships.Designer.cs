@@ -32,14 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DgvData = new System.Windows.Forms.DataGridView();
             this.DcCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DcMembresia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DcPlazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DcLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtLimit = new System.Windows.Forms.TextBox();
@@ -71,6 +69,7 @@
             this.BtnSearch.Size = new System.Drawing.Size(27, 27);
             this.BtnSearch.TabIndex = 40;
             this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // TxtSearch
             // 
@@ -109,7 +108,6 @@
             this.DgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DcCodigo,
             this.DcMembresia,
-            this.DcPlazo,
             this.DcLimite});
             this.DgvData.Location = new System.Drawing.Point(16, 197);
             this.DgvData.Name = "DgvData";
@@ -118,6 +116,7 @@
             this.DgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvData.Size = new System.Drawing.Size(667, 159);
             this.DgvData.TabIndex = 36;
+            this.DgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellDoubleClick);
             // 
             // DcCodigo
             // 
@@ -130,21 +129,12 @@
             this.DcMembresia.HeaderText = "MEMBRESIA";
             this.DcMembresia.Name = "DcMembresia";
             this.DcMembresia.ReadOnly = true;
-            this.DcMembresia.Width = 300;
-            // 
-            // DcPlazo
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DcPlazo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DcPlazo.HeaderText = "PLAZO DIAS";
-            this.DcPlazo.Name = "DcPlazo";
-            this.DcPlazo.ReadOnly = true;
-            this.DcPlazo.Width = 120;
+            this.DcMembresia.Width = 400;
             // 
             // DcLimite
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DcLimite.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DcLimite.DefaultCellStyle = dataGridViewCellStyle3;
             this.DcLimite.HeaderText = "LIMITE LIBROS";
             this.DcLimite.Name = "DcLimite";
             this.DcLimite.ReadOnly = true;
@@ -359,10 +349,6 @@
         private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView DgvData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DcCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DcMembresia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DcPlazo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DcLimite;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxtLimit;
         private System.Windows.Forms.TextBox TxtMembership;
@@ -381,5 +367,8 @@
         private System.Windows.Forms.ToolStripButton BtnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton BtnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcMembresia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DcLimite;
     }
 }

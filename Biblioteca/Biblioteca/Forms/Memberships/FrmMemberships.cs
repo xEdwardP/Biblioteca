@@ -1,31 +1,22 @@
-﻿using Biblioteca.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Biblioteca.Forms.Memberships
 {
     public partial class FrmMemberships : Form
     {
         // Instancias
-        Clases.Helpers helpers = new Clases.Helpers();
+        private Clases.Helpers helpers = new Clases.Helpers();
 
-        Clases.Repository repository = new Clases.Repository();
+        private Clases.Repository repository = new Clases.Repository();
 
-        string code;
+        private string code, member;
 
-        int errors = 0;
+        private int errors = 0, limitbooks;
 
-        string idmodule = "MEM";
+        private string idmodule = "MEM";
 
         public FrmMemberships()
         {
@@ -40,7 +31,7 @@ namespace Biblioteca.Forms.Memberships
 
         private void BtnNew_Click(object sender, EventArgs e)
         {
-            //AutoGenCode();
+            AutoGenCode();
             StateButtons(false, true, false, false, true, false, false);
             StateControls(true);
 
@@ -59,7 +50,7 @@ namespace Biblioteca.Forms.Memberships
             {
                 SetValues();
                 string fields = "IDMEMBRESIA, MEMBRESIA, LIMITELIB";
-                string values = "";
+                string values = "'" + code + "','" + member + "'," + limitbooks + "";
 
                 if (repository.Save("MEMBRESIAS", fields, values) > 0)
                 {
@@ -73,7 +64,26 @@ namespace Biblioteca.Forms.Memberships
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            ValideData();
 
+            if (errors == 0)
+            {
+                SetValues();
+
+                if (helpers.MsgQuestion(Clases.Messages.MsgUpdate) == "N")
+                {
+                    //string id = code;
+                    string values = "MEMBRESIA='" + member + ", LIMITELIB=" + limitbooks + "";
+                    string condition = "IDMEMBRESIA='" + code + "'";
+
+                    if (repository.Update("MEMBRESIAS", values, condition) > 0)
+                    {
+                        helpers.MsgSuccess(Clases.Messages.MsgDeletedSuccessfully);
+                        Clean();
+                        StartForm();
+                    }
+                }
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -119,7 +129,8 @@ namespace Biblioteca.Forms.Memberships
 
         private void StateControls(bool state)
         {
-            //
+            TxtMembership.Enabled = state;
+            TxtLimit.Enabled = state;
         }
 
         // Metodo StartForm -> Estado por defecto del formulario
@@ -143,21 +154,107 @@ namespace Biblioteca.Forms.Memberships
             {
                 txt.Clear();
             }
-
-            foreach (ComboBox cmb in this.Controls.OfType<ComboBox>())
-            {
-                cmb.SelectedIndex = -1;
-            }
         }
 
         private void ValideData()
         {
             errors = 0;
+            if (helpers.CleanStr(TxtMembership.Text.Trim()).Length == 0)
+            {
+                TxtMembership.Focus();
+                helpers.MsgWarning("");
+                errors++;
+                return;
+            }
+
+            if (helpers.CleanStr(TxtLimit.Text.Trim()).Length == 0)
+            {
+                TxtLimit.Focus();
+                helpers.MsgWarning("");
+                errors++;
+                return;
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string search = helpers.CleanStr(TxtSearch.Text.Trim());
+            GetMemberships(search);
         }
 
         private void SetValues()
         {
-            //
+            member = helpers.CleanStr(TxtMembership.Text.Trim());
+            limitbooks = Convert.ToInt16(helpers.CleanStr(TxtLimit.Text.Trim()));
+        }
+
+        private void GetMemberships(string search = "")
+        {
+            string condition = "", fields = "IDMEMBRESIA, MEMBRESIA, LIMITELIB";
+
+            if (search != "")
+            {
+                condition = "MEMBRESIA LIKE '%" + search + "%'";
+            }
+
+            DataTable data = repository.Find("MEMBRESIAS", fields, condition);
+            DgvData.Rows.Clear();
+
+            string _idmembership, _membership, _limit;
+
+            if (data.Rows.Count > 0)
+            {
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    _idmembership = data.Rows[i][0].ToString();
+                    _membership = data.Rows[i][1].ToString();
+                    _limit = data.Rows[i][2].ToString();
+
+                    DgvData.Rows.Add(_idmembership, _membership, _limit);
+                }
+                data.Dispose();
+            }
+            else
+            {
+                helpers.MsgWarning(Clases.Messages.MsgNotFound);
+            }
+        }
+
+        private void DgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(DgvData.Rows.Count > 0)
+            {
+                string id = DgvData.CurrentRow.Cells[0].Value.ToString();
+                GetInfoMemberships(id);
+                TxtMembership.Focus();
+            }
+        }
+
+        // Metodo AutoGenCode -> Genera los codigos para autores
+        private void AutoGenCode()
+        {
+            code = "MEM" + repository.GetNext(idmodule);
+            // helpers.MsgInfo(code.ToString());
+        }
+
+        private void GetInfoMemberships(string id)
+        {
+            string condition = "IDMEMBRESIA = '" + id + "'";
+            DataTable data = repository.Find("MEMBRESIAS", "*", condition);
+
+            if(data.Rows.Count > 0)
+            {
+                DataRow info = data.Rows[0];
+                code = info["IDMEMBRESIA"].ToString();
+                TxtMembership.Text = info["MEMBRESIA"].ToString();
+                TxtLimit.Text = info["LIMITELIB"].ToString();
+
+                StateButtons(false, false, true, true, true, false, false);
+            }
+            else
+            {
+                helpers.MsgWarning(Clases.Messages.MsgErrorInfo);
+            }
         }
     }
 }
