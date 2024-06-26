@@ -34,7 +34,7 @@ namespace Biblioteca.Forms.Loans
         {
             Text = Clases.App.AppName + "| Prestamos | ";
             StartForm();
-            Seed();
+            //Seed();
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -128,7 +128,10 @@ namespace Biblioteca.Forms.Loans
         {
             errors = 0;
 
-            if(TxtIdApplicant.Text.Length < 9)
+            string idMemb = helpers.CleanStr(TxtIdApplicant.Text.Trim());
+            string idLib = helpers.CleanStr(TxtIdBook.Text.Trim());
+
+            if (helpers.CleanStr(TxtIdApplicant.Text.Trim()).Length < 9)
             {
                 TxtIdApplicant.Focus();
                 helpers.MsgWarning("INGRESE UN CODIGO DE MIEMBRO VALIDO!");
@@ -151,6 +154,9 @@ namespace Biblioteca.Forms.Loans
                 errors++;
                 return;
             }
+
+            ValidateMember(idMemb);
+            ValidateBook(idLib);
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -215,8 +221,8 @@ namespace Biblioteca.Forms.Loans
             dateapplicant = DtpFApplicant.Text;
             datevacant = DtpFVacant.Text;
 
-            ValidateMember(idmember);
-            ValidateBook(idbook);
+            //ValidateMember(idmember);
+            //ValidateBook(idbook);
         }
 
         // Metodo AutoGenCode -> Genera los codigos para libros
@@ -236,6 +242,7 @@ namespace Biblioteca.Forms.Loans
             if (response == false)
             {
                 helpers.MsgWarning("NO SE ENCONTRARON COINCIDENCIAS, VERIFIQUE EL CODIGO O UTILICE EL BOTON DE BUSCAR POR NOMBRE!");
+                errors++;
                 return;
             }
 
@@ -244,7 +251,7 @@ namespace Biblioteca.Forms.Loans
 
             //helpers.MsgInfo(libdisp.ToString());
 
-            if (libdisp == 0)
+            if (libdisp <= 0)
             {
                 helpers.MsgWarning(msg);
                 errors++;
@@ -269,7 +276,7 @@ namespace Biblioteca.Forms.Loans
             // Verificamos disponibilidad en stock
             stock = Convert.ToInt16(repository.Hook("STOCK", "LIBROS", condition));
 
-            if(stock == 0)
+            if(stock <= 0)
             {
                 helpers.MsgWarning("EL LIBRO SOLICITADO NO TIENE MAS UNIDADES DISPONIBLES!");
                 errors++;
