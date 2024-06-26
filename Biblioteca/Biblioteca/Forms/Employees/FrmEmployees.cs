@@ -37,7 +37,7 @@ namespace Biblioteca.Forms.Employees
         {
             Text = Clases.App.AppName + "| Empleados | ";
             StartForm();
-            Seed();
+            //Seed();
         }
 
         private void BtnNew_Click(object sender, EventArgs e)

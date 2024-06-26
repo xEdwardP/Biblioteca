@@ -94,6 +94,12 @@
     <Compile Include="Forms\Loans\FrmLoans.Designer.cs">
       <DependentUpon>FrmLoans.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Loans\FrmReturnBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Loans\FrmReturnBooks.Designer.cs">
+      <DependentUpon>FrmReturnBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Loans\FrmSearchBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Loans\FrmLoans.resx">
       <DependentUpon>FrmLoans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Loans\FrmReturnBooks.resx">
+      <DependentUpon>FrmReturnBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Loans\FrmSearchBook.resx">
       <DependentUpon>FrmSearchBook.cs</DependentUpon>
@@ -251,6 +260,7 @@
     <Content Include="Icons\nuevo-24px.png" />
     <Content Include="Icons\ojo16px.png" />
     <Content Include="Icons\restaurar-16px.png" />
+    <Content Include="Icons\returnbook_24px.png" />
     <Content Include="Icons\salir-24px.png" />
     <Content Include="Icons\search-16px.png" />
     <Content Include="Icons\solicitudes-24px.png" />

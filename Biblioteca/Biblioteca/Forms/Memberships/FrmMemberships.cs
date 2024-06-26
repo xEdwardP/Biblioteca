@@ -12,7 +12,7 @@ namespace Biblioteca.Forms.Memberships
 
         private Clases.Repository repository = new Clases.Repository();
 
-        private string code, member;
+        private string code, memberships;
 
         private int errors = 0, limitbooks;
 
@@ -34,7 +34,7 @@ namespace Biblioteca.Forms.Memberships
             AutoGenCode();
             StateButtons(false, true, false, false, true, false, false);
             StateControls(true);
-
+            Clean();
             TxtSearch.Clear();
             TxtSearch.Enabled = false;
             BtnSearch.Enabled = false;
@@ -50,7 +50,7 @@ namespace Biblioteca.Forms.Memberships
             {
                 SetValues();
                 string fields = "IDMEMBRESIA, MEMBRESIA, LIMITELIB";
-                string values = "'" + code + "','" + member + "'," + limitbooks + "";
+                string values = "'" + code + "','" + memberships + "'," + limitbooks + "";
 
                 if (repository.Save("MEMBRESIAS", fields, values) > 0)
                 {
@@ -70,15 +70,15 @@ namespace Biblioteca.Forms.Memberships
             {
                 SetValues();
 
-                if (helpers.MsgQuestion(Clases.Messages.MsgUpdate) == "N")
+                if (helpers.MsgQuestion(Clases.Messages.MsgUpdate) == "S")
                 {
                     //string id = code;
-                    string values = "MEMBRESIA='" + member + ", LIMITELIB=" + limitbooks + "";
+                    string values = "MEMBRESIA='" + memberships + "', LIMITELIB=" + limitbooks + "";
                     string condition = "IDMEMBRESIA='" + code + "'";
 
                     if (repository.Update("MEMBRESIAS", values, condition) > 0)
                     {
-                        helpers.MsgSuccess(Clases.Messages.MsgDeletedSuccessfully);
+                        helpers.MsgSuccess(Clases.Messages.MsgUpdatedSuccessfully);
                         Clean();
                         StartForm();
                     }
@@ -162,7 +162,7 @@ namespace Biblioteca.Forms.Memberships
             if (helpers.CleanStr(TxtMembership.Text.Trim()).Length == 0)
             {
                 TxtMembership.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL NOMBRE DE LA MEMBRESIA!");
                 errors++;
                 return;
             }
@@ -170,7 +170,7 @@ namespace Biblioteca.Forms.Memberships
             if (helpers.CleanStr(TxtLimit.Text.Trim()).Length == 0)
             {
                 TxtLimit.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL LIMITE DE LIBROS QUE PUEDE SOLICITAR CON ESTA MEMBRESIA!");
                 errors++;
                 return;
             }
@@ -184,7 +184,7 @@ namespace Biblioteca.Forms.Memberships
 
         private void SetValues()
         {
-            member = helpers.CleanStr(TxtMembership.Text.Trim());
+            memberships = helpers.CleanStr(TxtMembership.Text.Trim());
             limitbooks = Convert.ToInt16(helpers.CleanStr(TxtLimit.Text.Trim()));
         }
 
@@ -226,6 +226,9 @@ namespace Biblioteca.Forms.Memberships
             {
                 string id = DgvData.CurrentRow.Cells[0].Value.ToString();
                 GetInfoMemberships(id);
+
+                StateControls(true);
+                TxtSearch.Enabled = false;
                 TxtMembership.Focus();
             }
         }

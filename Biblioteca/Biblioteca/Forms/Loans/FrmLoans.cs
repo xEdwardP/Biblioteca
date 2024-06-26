@@ -155,6 +155,31 @@ namespace Biblioteca.Forms.Loans
             GetLoans(search);
         }
 
+        private void BtnSearchApplicant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCleanApplicant_Click(object sender, EventArgs e)
+        {
+            TxtIdApplicant.Clear();
+        }
+
+        private void BtnSearchBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCleanIdBook_Click(object sender, EventArgs e)
+        {
+            TxtComentary.Clear();
+        }
+
+        private void BtnReturnBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void SetValues()
         {
             idmember = helpers.CleanStr(TxtIdApplicant.Text.Trim());

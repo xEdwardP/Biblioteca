@@ -225,6 +225,26 @@
   <metadata name="DcDeadline.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="BtnReturnBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAADJklEQVRIS62WW0hTcRzHVYQYIgpizJw656XdPDrdPJuX3RRdSqmkpum8Th2alwrFvBCV2iCfErwh
+        hF2NiqTLQ/jWW2FYWJmXlyhpYmqQFFr47b+jjdQ5h/aFD5yn7+d/fmf7neO0EWeCjJC4DxQEm3HhBIu/
+        CuVqBFFSyOgT4PJkSNSdRkp6A9JzWhzCL5Ca2ujbGpaCT8dDm2NAhEqH5NQGiKkj0Jf0o6x6ENWNdx3i
+        sCju9Ubh5nh5+RZQyiQk5JZtE+SXXkWB0T7Fld17F8TEpaC59YpdZLRmdwE/SgF18lGER8k3CVKPFWJy
+        Zgk3bj/BtcGH2xh/b0Z2TvnuguxcAyamltDVffP/CwIDRYaunvt2BTW151BWUbeJcmMdRsc+7i4I4YdV
+        dPcP2xXYY1+CxORiJKXk2UWpzdy7wNH/QWX9LQSF0m9Jnct66z/Zj6CgsA1ZPAFq/ALQygte1bPZM1J3
+        93uk1nu9nWSvAv3xM6j3D8CsVIrv8fFYTUhgMCuVSPbyekeqffYsMJ69Dr2vP8wyGb4oFBgQCq0CCwtq
+        NeQeHiNWwYX2XlJYhWg5sTsgyNKV4JlIxAjy2WykeXujgctFr0BglTRxubOkns0IwiPlUGcWObzsMsJi
+        8YmMZi46Gp/JeDpDQ5nSRxERGAoLY66fSiS/XV1dE5w4HIEhfIddtJPgJK3DdGQkzESwotVaT71IRnOe
+        x2OuhyjqB7kD2u6y20mQp7+EvuBgZkTLKhXeyOV4TE5v5HAwERPDCPJ9fCaJ4IBVoM4qgpBWQampQChf
+        hYysduQUdNpc0RZ0/iGYlEgwT8rHaBoj5I7micxS/lwq/Um5uXVYnjEjEIZLYaioR2OzaaWpxfStudW0
+        xNBiWmpquby4EyVi6tcwebAL5JdkGdWyRoMegWBB4u4+SKotr+F1QWNzJ168Mm/aMT39d7YtuK0YymsR
+        L4tBmoiC1vvgfKyn5/AhFiuOKf4bFotFt5n6116OzeHD9CKqqhtsltmjpPQU+AKR5dQ246zRpoxf7Ohb
+        6xt4YHPvO4JYLBnd6LMZy7ykBFufI45CE7bEyekPRBX3+9Imjq4AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="BtnCleanIdBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA

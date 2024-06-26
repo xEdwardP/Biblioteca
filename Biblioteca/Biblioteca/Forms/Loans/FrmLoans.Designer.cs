@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -51,18 +51,19 @@
             this.BtnSearchBook = new System.Windows.Forms.Button();
             this.BtnCleanApplicant = new System.Windows.Forms.Button();
             this.DgvData = new System.Windows.Forms.DataGridView();
-            this.TxtComentary = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.BtnManageLoan = new System.Windows.Forms.Button();
-            this.BtnCleanIdBook = new System.Windows.Forms.Button();
             this.DcCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DcMember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DcBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DcDeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtComentary = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BtnReturnBook = new System.Windows.Forms.Button();
+            this.BtnCleanIdBook = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.SuspendLayout();
@@ -240,6 +241,7 @@
             this.BtnSearchApplicant.TabIndex = 60;
             this.BtnSearchApplicant.Text = "BUSCAR POR NOMBRE";
             this.BtnSearchApplicant.UseVisualStyleBackColor = true;
+            this.BtnSearchApplicant.Click += new System.EventHandler(this.BtnSearchApplicant_Click);
             // 
             // BtnSearchBook
             // 
@@ -252,6 +254,7 @@
             this.BtnSearchBook.TabIndex = 61;
             this.BtnSearchBook.Text = "BUSCAR POR NOMBRE";
             this.BtnSearchBook.UseVisualStyleBackColor = true;
+            this.BtnSearchBook.Click += new System.EventHandler(this.BtnSearchBook_Click);
             // 
             // BtnCleanApplicant
             // 
@@ -262,6 +265,7 @@
             this.BtnCleanApplicant.Size = new System.Drawing.Size(27, 27);
             this.BtnCleanApplicant.TabIndex = 62;
             this.BtnCleanApplicant.UseVisualStyleBackColor = true;
+            this.BtnCleanApplicant.Click += new System.EventHandler(this.BtnCleanApplicant_Click);
             // 
             // DgvData
             // 
@@ -269,8 +273,8 @@
             this.DgvData.AllowUserToDeleteRows = false;
             this.DgvData.AllowUserToResizeColumns = false;
             this.DgvData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DcCode,
@@ -284,45 +288,6 @@
             this.DgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvData.Size = new System.Drawing.Size(834, 231);
             this.DgvData.TabIndex = 64;
-            // 
-            // TxtComentary
-            // 
-            this.TxtComentary.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtComentary.Location = new System.Drawing.Point(185, 142);
-            this.TxtComentary.MaxLength = 150;
-            this.TxtComentary.Name = "TxtComentary";
-            this.TxtComentary.Size = new System.Drawing.Size(665, 27);
-            this.TxtComentary.TabIndex = 66;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 19);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "COMENTARIO:";
-            // 
-            // BtnManageLoan
-            // 
-            this.BtnManageLoan.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnManageLoan.Location = new System.Drawing.Point(16, 458);
-            this.BtnManageLoan.Name = "BtnManageLoan";
-            this.BtnManageLoan.Size = new System.Drawing.Size(201, 27);
-            this.BtnManageLoan.TabIndex = 67;
-            this.BtnManageLoan.Text = "GESTIONAR PRESTAMOS";
-            this.BtnManageLoan.UseVisualStyleBackColor = true;
-            // 
-            // BtnCleanIdBook
-            // 
-            this.BtnCleanIdBook.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCleanIdBook.Image = ((System.Drawing.Image)(resources.GetObject("BtnCleanIdBook.Image")));
-            this.BtnCleanIdBook.Location = new System.Drawing.Point(600, 109);
-            this.BtnCleanIdBook.Name = "BtnCleanIdBook";
-            this.BtnCleanIdBook.Size = new System.Drawing.Size(27, 27);
-            this.BtnCleanIdBook.TabIndex = 68;
-            this.BtnCleanIdBook.UseVisualStyleBackColor = true;
             // 
             // DcCode
             // 
@@ -351,6 +316,50 @@
             this.DcDeadline.Name = "DcDeadline";
             this.DcDeadline.ReadOnly = true;
             this.DcDeadline.Width = 150;
+            // 
+            // TxtComentary
+            // 
+            this.TxtComentary.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtComentary.Location = new System.Drawing.Point(185, 142);
+            this.TxtComentary.MaxLength = 150;
+            this.TxtComentary.Name = "TxtComentary";
+            this.TxtComentary.Size = new System.Drawing.Size(665, 27);
+            this.TxtComentary.TabIndex = 66;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 19);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "COMENTARIO:";
+            // 
+            // BtnReturnBook
+            // 
+            this.BtnReturnBook.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReturnBook.ForeColor = System.Drawing.Color.Teal;
+            this.BtnReturnBook.Image = ((System.Drawing.Image)(resources.GetObject("BtnReturnBook.Image")));
+            this.BtnReturnBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnReturnBook.Location = new System.Drawing.Point(16, 458);
+            this.BtnReturnBook.Name = "BtnReturnBook";
+            this.BtnReturnBook.Size = new System.Drawing.Size(232, 27);
+            this.BtnReturnBook.TabIndex = 67;
+            this.BtnReturnBook.Text = "GESTIONAR DEVOLUCION";
+            this.BtnReturnBook.UseVisualStyleBackColor = true;
+            this.BtnReturnBook.Click += new System.EventHandler(this.BtnReturnBook_Click);
+            // 
+            // BtnCleanIdBook
+            // 
+            this.BtnCleanIdBook.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCleanIdBook.Image = ((System.Drawing.Image)(resources.GetObject("BtnCleanIdBook.Image")));
+            this.BtnCleanIdBook.Location = new System.Drawing.Point(600, 109);
+            this.BtnCleanIdBook.Name = "BtnCleanIdBook";
+            this.BtnCleanIdBook.Size = new System.Drawing.Size(27, 27);
+            this.BtnCleanIdBook.TabIndex = 68;
+            this.BtnCleanIdBook.UseVisualStyleBackColor = true;
+            this.BtnCleanIdBook.Click += new System.EventHandler(this.BtnCleanIdBook_Click);
             // 
             // BtnSearch
             // 
@@ -393,17 +402,29 @@
             this.label9.Text = "     PRESTAMOS ACTIVOS";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Teal;
+            this.label7.Location = new System.Drawing.Point(507, 464);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(343, 14);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "SELECCIONAR UN REGISTRO PARA REALIZAR UNA DEVOLUCION";
+            // 
             // FrmLoans
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(870, 494);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.BtnCleanIdBook);
-            this.Controls.Add(this.BtnManageLoan);
+            this.Controls.Add(this.BtnReturnBook);
             this.Controls.Add(this.TxtComentary);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DgvData);
@@ -462,7 +483,7 @@
         private System.Windows.Forms.DataGridView DgvData;
         private System.Windows.Forms.TextBox TxtComentary;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button BtnManageLoan;
+        private System.Windows.Forms.Button BtnReturnBook;
         private System.Windows.Forms.Button BtnCleanIdBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn DcCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn DcMember;
@@ -472,5 +493,6 @@
         private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
     }
 }
