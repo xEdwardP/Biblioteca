@@ -34,7 +34,7 @@ namespace Biblioteca.Forms.Loans
         {
             Text = Clases.App.AppName + "| Prestamos | ";
             StartForm();
-            // Seed();
+            Seed();
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -46,6 +46,8 @@ namespace Biblioteca.Forms.Loans
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            //ValidateMember(idmember);
+            //ValidateBook(idbook);
             ValidateData();
 
             if(errors == 0)
@@ -106,13 +108,15 @@ namespace Biblioteca.Forms.Loans
         // Metodo StartHome -> Metodo Inicial
         private void StartForm()
         {
-            StateButtons(true, false, false, true, false);
+            StateButtons(true, false, true, true, false);
             StateControls(false);
         }
 
         // Metodo Clean -> Limpia los controles
         private void Clean()
         {
+            DgvData.Rows.Clear();
+            TxtSearch.Clear();
             TxtIdApplicant.Clear();
             TxtIdBook.Clear(); ;
             TxtComentary.Clear();
@@ -177,7 +181,30 @@ namespace Biblioteca.Forms.Loans
 
         private void BtnReturnBook_Click(object sender, EventArgs e)
         {
+            if(DgvData.Rows.Count > 0)
+            {
+                string codloan, codbook, codmember, deadline, comentarybook;
+                codloan = DgvData.CurrentRow.Cells[0].Value.ToString();
+                codmember = DgvData.CurrentRow.Cells[1].Value.ToString();
+                codbook = DgvData.CurrentRow.Cells[2].Value.ToString();
+                deadline = DgvData.CurrentRow.Cells[3].Value.ToString();
+                comentarybook = repository.Hook("COMENTARIO", "PRESTAMOS", "IDPRESTAMO='" + codloan + "'");
 
+                var returnBooks = new Forms.Loans.FrmReturnBooks();
+                AddOwnedForm(returnBooks);
+
+                returnBooks.codloan = codloan;
+                returnBooks.codmember = codmember;
+                returnBooks.codbook = codbook;
+                returnBooks.deadline = deadline;
+                returnBooks.comentaryloan = comentarybook;
+
+                returnBooks.ShowDialog();
+            }
+            else
+            {
+                helpers.MsgWarning("NO HA SELECCIONADO UN REGISTRO, SELECCIONE EL REGISTRO AL QUE DESEA REALIZAR LA DEVOLUCION!");
+            }
         }
 
         private void SetValues()
@@ -220,6 +247,7 @@ namespace Biblioteca.Forms.Loans
             if (libdisp == 0)
             {
                 helpers.MsgWarning(msg);
+                errors++;
                 return;
             }
         }
@@ -234,6 +262,7 @@ namespace Biblioteca.Forms.Loans
             if (response == false)
             {
                 helpers.MsgWarning("NO SE ENCONTRARON COINCIDENCIAS, VERIFIQUE EL CODIGO O UTILICE EL BOTON DE BUSCAR POR NOMBRE!");
+                errors++;
                 return;
             }
 
@@ -243,6 +272,7 @@ namespace Biblioteca.Forms.Loans
             if(stock == 0)
             {
                 helpers.MsgWarning("EL LIBRO SOLICITADO NO TIENE MAS UNIDADES DISPONIBLES!");
+                errors++;
                 return;
             }
         }
