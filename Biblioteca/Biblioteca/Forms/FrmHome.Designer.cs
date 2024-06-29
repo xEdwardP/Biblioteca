@@ -31,32 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.TsArchivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.OptAutores = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptAuthors = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.OptGenerosLit = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptLiteraryGenres = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.OptEditoriales = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptPublishers = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.OptLibros = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptBooks = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.OptEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.OptMiembros = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptMemberhips = new System.Windows.Forms.ToolStripMenuItem();
             this.TsReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.TsConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.TsSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.BtnAuthors = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnLiteraryGenres = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnPublishers = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnBooks = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnExit = new System.Windows.Forms.ToolStripButton();
-            this.BtnMemberships = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnLoans = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnMembers = new System.Windows.Forms.ToolStripButton();
@@ -66,6 +57,9 @@
             this.LblFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.LblBd = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnBooks = new System.Windows.Forms.ToolStripButton();
+            this.BtnAuthors = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SstPrincipal.SuspendLayout();
@@ -87,63 +81,65 @@
             // TsArchivo
             // 
             this.TsArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OptAutores,
+            this.OptAuthors,
             this.toolStripSeparator5,
-            this.OptGenerosLit,
+            this.OptLiteraryGenres,
             this.toolStripSeparator6,
-            this.OptEditoriales,
+            this.OptPublishers,
             this.toolStripSeparator7,
-            this.OptLibros,
+            this.OptBooks,
             this.toolStripSeparator8,
             this.OptEmployee,
             this.toolStripSeparator9,
-            this.OptMiembros});
+            this.OptMemberhips});
             this.TsArchivo.Name = "TsArchivo";
             this.TsArchivo.Size = new System.Drawing.Size(70, 20);
             this.TsArchivo.Text = "ARCHIVO";
             // 
-            // OptAutores
+            // OptAuthors
             // 
-            this.OptAutores.Image = ((System.Drawing.Image)(resources.GetObject("OptAutores.Image")));
-            this.OptAutores.Name = "OptAutores";
-            this.OptAutores.Size = new System.Drawing.Size(189, 22);
-            this.OptAutores.Text = "AUTORES";
+            this.OptAuthors.Image = ((System.Drawing.Image)(resources.GetObject("OptAuthors.Image")));
+            this.OptAuthors.Name = "OptAuthors";
+            this.OptAuthors.Size = new System.Drawing.Size(189, 22);
+            this.OptAuthors.Text = "AUTORES";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(186, 6);
             // 
-            // OptGenerosLit
+            // OptLiteraryGenres
             // 
-            this.OptGenerosLit.Image = ((System.Drawing.Image)(resources.GetObject("OptGenerosLit.Image")));
-            this.OptGenerosLit.Name = "OptGenerosLit";
-            this.OptGenerosLit.Size = new System.Drawing.Size(189, 22);
-            this.OptGenerosLit.Text = "GENEROS LITERARIOS";
+            this.OptLiteraryGenres.Image = ((System.Drawing.Image)(resources.GetObject("OptLiteraryGenres.Image")));
+            this.OptLiteraryGenres.Name = "OptLiteraryGenres";
+            this.OptLiteraryGenres.Size = new System.Drawing.Size(189, 22);
+            this.OptLiteraryGenres.Text = "GENEROS LITERARIOS";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(186, 6);
             // 
-            // OptEditoriales
+            // OptPublishers
             // 
-            this.OptEditoriales.Image = ((System.Drawing.Image)(resources.GetObject("OptEditoriales.Image")));
-            this.OptEditoriales.Name = "OptEditoriales";
-            this.OptEditoriales.Size = new System.Drawing.Size(189, 22);
-            this.OptEditoriales.Text = "EDITORIALES";
+            this.OptPublishers.Image = ((System.Drawing.Image)(resources.GetObject("OptPublishers.Image")));
+            this.OptPublishers.Name = "OptPublishers";
+            this.OptPublishers.Size = new System.Drawing.Size(189, 22);
+            this.OptPublishers.Text = "EDITORIALES";
+            this.OptPublishers.Click += new System.EventHandler(this.OptPublishers_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(186, 6);
             // 
-            // OptLibros
+            // OptBooks
             // 
-            this.OptLibros.Image = ((System.Drawing.Image)(resources.GetObject("OptLibros.Image")));
-            this.OptLibros.Name = "OptLibros";
-            this.OptLibros.Size = new System.Drawing.Size(189, 22);
-            this.OptLibros.Text = "LIBROS";
+            this.OptBooks.Image = ((System.Drawing.Image)(resources.GetObject("OptBooks.Image")));
+            this.OptBooks.Name = "OptBooks";
+            this.OptBooks.Size = new System.Drawing.Size(189, 22);
+            this.OptBooks.Text = "LIBROS";
+            this.OptBooks.Click += new System.EventHandler(this.OptBooks_Click);
             // 
             // toolStripSeparator8
             // 
@@ -163,12 +159,13 @@
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(186, 6);
             // 
-            // OptMiembros
+            // OptMemberhips
             // 
-            this.OptMiembros.Image = ((System.Drawing.Image)(resources.GetObject("OptMiembros.Image")));
-            this.OptMiembros.Name = "OptMiembros";
-            this.OptMiembros.Size = new System.Drawing.Size(189, 22);
-            this.OptMiembros.Text = "MIEMBROS";
+            this.OptMemberhips.Image = ((System.Drawing.Image)(resources.GetObject("OptMemberhips.Image")));
+            this.OptMemberhips.Name = "OptMemberhips";
+            this.OptMemberhips.Size = new System.Drawing.Size(189, 22);
+            this.OptMemberhips.Text = "MEMBRESIAS";
+            this.OptMemberhips.Click += new System.EventHandler(this.OptMemberhips_Click);
             // 
             // TsReportes
             // 
@@ -193,15 +190,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BtnAuthors,
             this.toolStripSeparator1,
-            this.BtnLiteraryGenres,
-            this.toolStripSeparator2,
-            this.BtnPublishers,
-            this.toolStripSeparator3,
             this.BtnBooks,
             this.toolStripSeparator4,
             this.BtnExit,
-            this.BtnMemberships,
-            this.toolStripSeparator12,
             this.BtnLoans,
             this.toolStripSeparator13,
             this.BtnMembers});
@@ -211,73 +202,10 @@
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // BtnAuthors
-            // 
-            this.BtnAuthors.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAuthors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnAuthors.Image = ((System.Drawing.Image)(resources.GetObject("BtnAuthors.Image")));
-            this.BtnAuthors.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnAuthors.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnAuthors.Name = "BtnAuthors";
-            this.BtnAuthors.Size = new System.Drawing.Size(89, 28);
-            this.BtnAuthors.Text = "AUTORES";
-            this.BtnAuthors.Click += new System.EventHandler(this.BtnAuthors_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
-            // 
-            // BtnLiteraryGenres
-            // 
-            this.BtnLiteraryGenres.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLiteraryGenres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnLiteraryGenres.Image = ((System.Drawing.Image)(resources.GetObject("BtnLiteraryGenres.Image")));
-            this.BtnLiteraryGenres.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnLiteraryGenres.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnLiteraryGenres.Name = "BtnLiteraryGenres";
-            this.BtnLiteraryGenres.Size = new System.Drawing.Size(159, 28);
-            this.BtnLiteraryGenres.Text = "GENEROS LITERARIOS";
-            this.BtnLiteraryGenres.Click += new System.EventHandler(this.BtnLiteraryGenres_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
-            // 
-            // BtnPublishers
-            // 
-            this.BtnPublishers.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPublishers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnPublishers.Image = ((System.Drawing.Image)(resources.GetObject("BtnPublishers.Image")));
-            this.BtnPublishers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnPublishers.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnPublishers.Name = "BtnPublishers";
-            this.BtnPublishers.Size = new System.Drawing.Size(109, 28);
-            this.BtnPublishers.Text = "EDITORIALES";
-            this.BtnPublishers.Click += new System.EventHandler(this.BtnPublishers_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
-            // 
-            // BtnBooks
-            // 
-            this.BtnBooks.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnBooks.Image = ((System.Drawing.Image)(resources.GetObject("BtnBooks.Image")));
-            this.BtnBooks.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnBooks.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnBooks.Name = "BtnBooks";
-            this.BtnBooks.Size = new System.Drawing.Size(77, 28);
-            this.BtnBooks.Text = "LIBROS";
-            this.BtnBooks.Click += new System.EventHandler(this.BtnBooks_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // BtnExit
             // 
@@ -291,23 +219,6 @@
             this.BtnExit.Size = new System.Drawing.Size(68, 28);
             this.BtnExit.Text = "SALIR";
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
-            // 
-            // BtnMemberships
-            // 
-            this.BtnMemberships.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMemberships.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnMemberships.Image = ((System.Drawing.Image)(resources.GetObject("BtnMemberships.Image")));
-            this.BtnMemberships.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnMemberships.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMemberships.Name = "BtnMemberships";
-            this.BtnMemberships.Size = new System.Drawing.Size(111, 28);
-            this.BtnMemberships.Text = "MEMBRESIAS";
-            this.BtnMemberships.Click += new System.EventHandler(this.BtnMemberships_Click);
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 31);
             // 
             // BtnLoans
             // 
@@ -389,6 +300,34 @@
             this.LblBd.Size = new System.Drawing.Size(38, 32);
             this.LblBd.Text = "---";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
+            // 
+            // BtnBooks
+            // 
+            this.BtnBooks.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnBooks.Image = ((System.Drawing.Image)(resources.GetObject("BtnBooks.Image")));
+            this.BtnBooks.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnBooks.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnBooks.Name = "BtnBooks";
+            this.BtnBooks.Size = new System.Drawing.Size(77, 28);
+            this.BtnBooks.Text = "LIBROS";
+            this.BtnBooks.Click += new System.EventHandler(this.BtnBooks_Click);
+            // 
+            // BtnAuthors
+            // 
+            this.BtnAuthors.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAuthors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnAuthors.Image = ((System.Drawing.Image)(resources.GetObject("BtnAuthors.Image")));
+            this.BtnAuthors.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnAuthors.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAuthors.Name = "BtnAuthors";
+            this.BtnAuthors.Size = new System.Drawing.Size(89, 28);
+            this.BtnAuthors.Text = "AUTORES";
+            // 
             // FrmHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -426,32 +365,23 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem TsArchivo;
-        private System.Windows.Forms.ToolStripMenuItem OptAutores;
+        private System.Windows.Forms.ToolStripMenuItem OptAuthors;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem OptGenerosLit;
+        private System.Windows.Forms.ToolStripMenuItem OptLiteraryGenres;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem OptEditoriales;
+        private System.Windows.Forms.ToolStripMenuItem OptPublishers;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripMenuItem OptLibros;
+        private System.Windows.Forms.ToolStripMenuItem OptBooks;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem OptEmployee;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripMenuItem OptMiembros;
+        private System.Windows.Forms.ToolStripMenuItem OptMemberhips;
         private System.Windows.Forms.ToolStripMenuItem TsReportes;
         private System.Windows.Forms.ToolStripMenuItem TsConfiguracion;
         private System.Windows.Forms.ToolStripMenuItem TsSistema;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton BtnAuthors;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton BtnLiteraryGenres;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton BtnPublishers;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton BtnBooks;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton BtnExit;
-        private System.Windows.Forms.ToolStripButton BtnMemberships;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripButton BtnLoans;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton BtnMembers;
@@ -461,5 +391,8 @@
         private System.Windows.Forms.ToolStripStatusLabel LblFecha;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripStatusLabel LblBd;
+        private System.Windows.Forms.ToolStripButton BtnAuthors;
+        private System.Windows.Forms.ToolStripButton BtnBooks;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

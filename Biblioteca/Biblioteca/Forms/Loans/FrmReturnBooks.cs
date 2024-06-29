@@ -11,11 +11,10 @@ namespace Biblioteca.Forms.Loans
 
         private Repository repository = new Clases.Repository();
 
+        // Variables
         public string codloan, codbook, codmember, deadline, comentaryloan;
-
         private string code, returndate, statebook, comentarybook, penaltybook;
         private int errors = 0;
-
         private string datetoday = DateTime.Today.ToShortDateString().ToString();
         private string idmodule = "DVN";
 
@@ -65,6 +64,7 @@ namespace Biblioteca.Forms.Loans
             Close();
         }
 
+        // Metodo Clean -> Limpia los controles
         private void Clean()
         {
             DtpReturnDate.Text = datetoday;
@@ -73,6 +73,7 @@ namespace Biblioteca.Forms.Loans
             TxtPenalty.Clear();
         }
 
+        // Metodo StartForm -> Estado por defecto del formulario
         private void StartForm()
         {
             TxtIdLoan.Text = codloan.ToString();
@@ -84,9 +85,10 @@ namespace Biblioteca.Forms.Loans
             DtpDateApplicant.Enabled = false;
             TxtComentaryLoan.Focus();
 
-            TxtPenalty.Text = "0";
+            TxtPenalty.Text = "0.00";
         }
 
+        // Metodo ValideData -> Valida la informacion ingresada en los campos
         private void ValidateData()
         {
             errors = 0;
@@ -129,6 +131,7 @@ namespace Biblioteca.Forms.Loans
             }
         }
 
+        // Metodo SetValues -> Almacenada la informacion de los campos en variables
         private void SetValues()
         {
             AutoGenCode();
@@ -138,6 +141,7 @@ namespace Biblioteca.Forms.Loans
             penaltybook = helpers.CleanStr(TxtPenalty.Text.Trim());
         }
 
+        // Metodo IncreaseBooks -> Incrementa la disponibilidad en stock y en solicitudes del miembro
         private void IncreaseBooks()
         {
             string idmember = repository.Hook("IDMIEMBRO", "PRESTAMOS", "IDPRESTAMO='" + codloan + "'");

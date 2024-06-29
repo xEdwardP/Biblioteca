@@ -155,6 +155,7 @@
             // 
             this.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtSearch.Location = new System.Drawing.Point(447, 316);
+            this.TxtSearch.MaxLength = 150;
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(339, 27);
             this.TxtSearch.TabIndex = 49;
@@ -184,6 +185,7 @@
             // TxtSalary
             // 
             this.TxtSalary.Location = new System.Drawing.Point(731, 275);
+            this.TxtSalary.MaxLength = 12;
             this.TxtSalary.Name = "TxtSalary";
             this.TxtSalary.Size = new System.Drawing.Size(121, 27);
             this.TxtSalary.TabIndex = 46;
@@ -204,6 +206,7 @@
             // TxtPhone
             // 
             this.TxtPhone.Location = new System.Drawing.Point(463, 242);
+            this.TxtPhone.MaxLength = 10;
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(131, 27);
             this.TxtPhone.TabIndex = 44;
@@ -212,6 +215,7 @@
             // 
             this.TxtAdress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtAdress.Location = new System.Drawing.Point(112, 149);
+            this.TxtAdress.MaxLength = 150;
             this.TxtAdress.Multiline = true;
             this.TxtAdress.Name = "TxtAdress";
             this.TxtAdress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -222,6 +226,7 @@
             // 
             this.TxtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtName.Location = new System.Drawing.Point(110, 116);
+            this.TxtName.MaxLength = 150;
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(321, 27);
             this.TxtName.TabIndex = 42;
@@ -281,6 +286,7 @@
             // TxtDocument
             // 
             this.TxtDocument.Location = new System.Drawing.Point(112, 83);
+            this.TxtDocument.MaxLength = 20;
             this.TxtDocument.Name = "TxtDocument";
             this.TxtDocument.Size = new System.Drawing.Size(256, 27);
             this.TxtDocument.TabIndex = 36;
@@ -419,7 +425,9 @@
             // 
             // TxtEmail
             // 
+            this.TxtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.TxtEmail.Location = new System.Drawing.Point(112, 209);
+            this.TxtEmail.MaxLength = 150;
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(740, 27);
             this.TxtEmail.TabIndex = 54;
@@ -480,6 +488,7 @@
             // 
             this.TxtLastName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtLastName.Location = new System.Drawing.Point(535, 116);
+            this.TxtLastName.MaxLength = 150;
             this.TxtLastName.Name = "TxtLastName";
             this.TxtLastName.Size = new System.Drawing.Size(317, 27);
             this.TxtLastName.TabIndex = 61;

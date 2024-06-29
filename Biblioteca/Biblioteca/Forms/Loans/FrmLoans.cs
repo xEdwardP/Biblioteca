@@ -1,15 +1,7 @@
 ﻿using Biblioteca.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.AxHost;
 
 namespace Biblioteca.Forms.Loans
 {
@@ -20,10 +12,10 @@ namespace Biblioteca.Forms.Loans
 
         private Repository repository = new Clases.Repository();
 
-        string datetoday = DateTime.Today.ToShortDateString().ToString();
-        int errors, stock, libdisp;
-        string code, idmember, idbook, comentary, dateapplicant, datevacant;
-        string idmodule = "PSM";
+        private string datetoday = DateTime.Today.ToShortDateString().ToString();
+        private int errors, stock, libdisp;
+        private string code, idmember, idbook, comentary, dateapplicant, datevacant;
+        private string idmodule = "PSM";
 
         public FrmLoans()
         {
@@ -39,18 +31,16 @@ namespace Biblioteca.Forms.Loans
 
         private void BtnNew_Click(object sender, EventArgs e)
         {
-            StateButtons(false,true,true,false,true);
+            StateButtons(false, true, true, false, true);
             StateControls(true);
             AutoGenCode();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            //ValidateMember(idmember);
-            //ValidateBook(idbook);
             ValidateData();
 
-            if(errors == 0)
+            if (errors == 0)
             {
                 SetValues();
                 string fields = "IDPRESTAMO, IDMIEMBRO, IDLIBRO, FSOLICITUD, FENTREGA, COMENTARIO";
@@ -124,6 +114,7 @@ namespace Biblioteca.Forms.Loans
             DtpFVacant.Text = datetoday;
         }
 
+        // Metodo ValideData -> Valida la informacion ingresada en los campos
         private void ValidateData()
         {
             errors = 0;
@@ -139,7 +130,7 @@ namespace Biblioteca.Forms.Loans
                 return;
             }
 
-            if(TxtIdBook.Text.Length < 9)
+            if (TxtIdBook.Text.Length < 9)
             {
                 TxtIdBook.Focus();
                 helpers.MsgWarning("INGRESE UN CODIGO DE LIBRO VALIDO!");
@@ -147,7 +138,7 @@ namespace Biblioteca.Forms.Loans
                 return;
             }
 
-            if(TxtComentary.Text.Length == 0)
+            if (TxtComentary.Text.Length == 0)
             {
                 TxtComentary.Focus();
                 helpers.MsgWarning("INGRESE UN COMENTARIO!");
@@ -167,7 +158,6 @@ namespace Biblioteca.Forms.Loans
 
         private void BtnSearchApplicant_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnCleanApplicant_Click(object sender, EventArgs e)
@@ -177,7 +167,6 @@ namespace Biblioteca.Forms.Loans
 
         private void BtnSearchBook_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtnCleanIdBook_Click(object sender, EventArgs e)
@@ -187,7 +176,8 @@ namespace Biblioteca.Forms.Loans
 
         private void BtnReturnBook_Click(object sender, EventArgs e)
         {
-            if(DgvData.Rows.Count > 0)
+            // Enviamos la informacion a el formulario de devoluciones
+            if (DgvData.Rows.Count > 0)
             {
                 string codloan, codbook, codmember, deadline, comentarybook;
                 codloan = DgvData.CurrentRow.Cells[0].Value.ToString();
@@ -213,6 +203,7 @@ namespace Biblioteca.Forms.Loans
             }
         }
 
+        // Metodo SetValues -> Almacenada la informacion de los campos en variables
         private void SetValues()
         {
             idmember = helpers.CleanStr(TxtIdApplicant.Text.Trim());
@@ -220,9 +211,6 @@ namespace Biblioteca.Forms.Loans
             comentary = helpers.CleanStr(TxtComentary.Text.Trim());
             dateapplicant = DtpFApplicant.Text;
             datevacant = DtpFVacant.Text;
-
-            //ValidateMember(idmember);
-            //ValidateBook(idbook);
         }
 
         // Metodo AutoGenCode -> Genera los codigos para libros
@@ -231,6 +219,7 @@ namespace Biblioteca.Forms.Loans
             code = "PSM" + repository.GetNext(idmodule);
         }
 
+        // Metodo ValidateMember -> Validamos a el miembro solicitante del prestamo
         private void ValidateMember(string id)
         {
             string condition = "IDMIEMBRO='" + id + "'";
@@ -259,6 +248,7 @@ namespace Biblioteca.Forms.Loans
             }
         }
 
+        // Metodo ValidateBook -> Validamos el libro solicitado
         private void ValidateBook(string id)
         {
             string condition = "IDLIBRO='" + id + "'";
@@ -276,19 +266,12 @@ namespace Biblioteca.Forms.Loans
             // Verificamos disponibilidad en stock
             stock = Convert.ToInt16(repository.Hook("STOCK", "LIBROS", condition));
 
-            if(stock <= 0)
+            if (stock <= 0)
             {
                 helpers.MsgWarning("EL LIBRO SOLICITADO NO TIENE MAS UNIDADES DISPONIBLES!");
                 errors++;
                 return;
             }
-        }
-
-        private void Seed()
-        {
-            TxtIdApplicant.Text = "MBO000002";
-            TxtIdBook.Text = "LIB000001";
-            TxtComentary.Text = "LO QUIERO PARA MI";
         }
 
         // Metodo DecreaseBooks -> Disminuye la cantidad en stock y en libros que puede solicitar el miembro
@@ -300,7 +283,7 @@ namespace Biblioteca.Forms.Loans
             var cond2 = repository.Update("LIBROS", "STOCK='" + stock + "'", "IDLIBRO='" + idbook + "'");
             var cond1 = repository.Update("MIEMBROS", "LIBDISP='" + libdisp + "'", "IDMIEMBRO='" + idmember + "'");
 
-            if(cond1 > 0 && cond2 > 0)
+            if (cond1 > 0 && cond2 > 0)
             {
                 helpers.MsgSuccess("SE DISMINUYERON LAS EXISTENCIAS!");
             }
@@ -329,7 +312,7 @@ namespace Biblioteca.Forms.Loans
 
             string _idloan, _idmember, _idbook, _deadline;
 
-            if(data.Rows.Count > 0)
+            if (data.Rows.Count > 0)
             {
                 for (int i = 0; i < data.Rows.Count; i++)
                 {

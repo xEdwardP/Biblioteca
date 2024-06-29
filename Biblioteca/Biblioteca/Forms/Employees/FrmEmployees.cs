@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace Biblioteca.Forms.Employees
 {
@@ -20,13 +12,13 @@ namespace Biblioteca.Forms.Employees
 
         private Clases.Repository repository = new Clases.Repository();
 
-        string code, document, name, lastname, adress, email, genre, phone, fechanac, job, stateemployee;
-        string datetoday = DateTime.Today.ToShortDateString().ToString();
+        // Variables
+        private string code, document, name, lastname, adress, email, genre, phone, fechanac, job, stateemployee;
 
-        double salary;
-
-        int errors = 0;
-        string idmodule = "EMP";
+        private string datetoday = DateTime.Today.ToShortDateString().ToString();
+        private double salary;
+        private int errors = 0;
+        private string idmodule = "EMP";
 
         public FrmEmployees()
         {
@@ -37,7 +29,6 @@ namespace Biblioteca.Forms.Employees
         {
             Text = Clases.App.AppName + "| Empleados | ";
             StartForm();
-            //Seed();
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -55,7 +46,7 @@ namespace Biblioteca.Forms.Employees
         {
             ValidateData();
 
-            if(errors == 0)
+            if (errors == 0)
             {
                 SetValues();
 
@@ -197,9 +188,9 @@ namespace Biblioteca.Forms.Employees
         private void AutoGenCode()
         {
             code = "EMP" + repository.GetNext(idmodule);
-            // helpers.MsgInfo(code.ToString());
         }
 
+        // Metodo StartForm -> Estado por defecto del formulario
         private void StartForm()
         {
             DgvData.Refresh();
@@ -213,11 +204,11 @@ namespace Biblioteca.Forms.Employees
             BtnSearch.Enabled = true;
         }
 
+        // Metodo ValidateData -> Valida la informacion ingresada en los campos
         private void ValidateData()
         {
             errors = 0;
             string datetoday = DateTime.Today.ToShortDateString().ToString();
-            //helpers.MsgInfo(datetoday);
 
             if (helpers.CleanStr(TxtDocument.Text.Trim()).Length < 13)
             {
@@ -275,14 +266,6 @@ namespace Biblioteca.Forms.Employees
                 return;
             }
 
-            //if (DtpDateBirth.Text == datetoday)
-            //{
-            //    DtpDateBirth.Focus();
-            //    helpers.MsgWarning("INGRESE UNA FECHA DE NACIMIENTO VALIDA!");
-            //    errors++;
-            //    return;
-            //}
-
             if (CmbJob.Text == "")
             {
                 CmbJob.Focus();
@@ -309,13 +292,12 @@ namespace Biblioteca.Forms.Employees
             email = helpers.CleanStr(TxtEmail.Text.Trim());
             genre = CmbGenre.Text.Trim();
             phone = helpers.CleanStr(TxtPhone.Text.Trim());
-            //dateb = DtpDateBirth.Text;
             fechanac = DtpDateB.Text;
             job = CmbJob.Text.Trim();
             salary = Convert.ToDouble(helpers.CleanStr(TxtSalary.Text.Trim()));
         }
 
-        // Metodo GetPublishers -> Muestra los registros en el data gried view
+        // Metodo GetEmployees -> Muestra los registros en el data gried view
         private void GetEmployees(string search = "")
         {
             string condition = "", fields = "IDEMP, DOCEMP, NOMEMP + SPACE(1) + APEEMP AS 'NAME', ESTADO";
@@ -348,6 +330,7 @@ namespace Biblioteca.Forms.Employees
             }
         }
 
+        // Metodo GetInfoEmployees -> Muestra un registro en los campos para su edicion o eliminacion
         private void GetInfoEmployees(string id)
         {
             string condition = "IDEMP='" + id + "'";
@@ -378,18 +361,19 @@ namespace Biblioteca.Forms.Employees
             }
         }
 
+        // Metodo StateEmployee -> Habilita y deshabilita el control de estado
         private void StateEmployee(bool state)
         {
             CmbStateEmployee.Visible = state;
             LblStaetEmployee.Visible = state;
-
             CmbStateEmployee.Enabled = state;
         }
 
+        // Metodo Seed -> Metodo de prueba
         private void Seed()
         {
             TxtDocument.Text = "0401200000128";
-            TxtName.Text = "JUAN";
+            TxtName.Text = "JUAN CARLOS";
             TxtLastName.Text = "BODOQUE";
             TxtAdress.Text = "SANTA ROSA DE COPAN";
             TxtEmail.Text = "correo@gmail.com";

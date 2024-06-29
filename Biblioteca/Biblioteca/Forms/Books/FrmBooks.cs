@@ -1,15 +1,8 @@
 ﻿using Biblioteca.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Biblioteca.Forms.Books
 {
@@ -21,11 +14,11 @@ namespace Biblioteca.Forms.Books
         private Repository repository = new Clases.Repository();
 
         // Variables Globales
-        string code, title, description, idauthor, idgenre, idpublisher, edition, yearpub, isbn, stock;
+        private string code, title, description, idauthor, idgenre, idpublisher, edition, yearpub, isbn, stock;
 
-        int errors = 0;
+        private int errors = 0;
 
-        string idmodule = "LIB";
+        private string idmodule = "LIB";
 
         public FrmBooks()
         {
@@ -53,7 +46,7 @@ namespace Biblioteca.Forms.Books
         {
             ValidateDatos();
 
-            if(errors == 0)
+            if (errors == 0)
             {
                 SetValues();
                 string fields = "IDLIBRO, LIBRO, DESCLIBRO, IDAUTOR, IDGENL, IDEDIT, EDITION, APULIB, ISBN, STOCK";
@@ -63,15 +56,15 @@ namespace Biblioteca.Forms.Books
                 if (repository.Save("LIBROS", fields, values) > 0)
                 {
                     helpers.MsgSuccess(Clases.Messages.MsgSave);
-                    
-                    if(ChkAutoGen.Checked == true)
+
+                    if (ChkAutoGen.Checked == true)
                     {
                         repository.SetLast(idmodule);
                     }
 
                     Clean();
                     StartForm();
-                } 
+                }
             }
         }
 
@@ -182,7 +175,7 @@ namespace Biblioteca.Forms.Books
         // Metodo AutoGenCode -> Genera los codigos para libros
         private void AutoGenCode()
         {
-            if(ChkAutoGen.Checked == true)
+            if (ChkAutoGen.Checked == true)
             {
                 TxtCode.Text = "LIB" + repository.GetNext(idmodule);
                 TxtCode.Enabled = false;
@@ -245,7 +238,7 @@ namespace Biblioteca.Forms.Books
         {
             DgvData.Rows.Clear();
 
-            foreach(TextBox txt in this.Controls.OfType<TextBox>())
+            foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
                 txt.Clear();
             }
@@ -256,11 +249,12 @@ namespace Biblioteca.Forms.Books
             }
         }
 
+        // Metodo ValidateInfo -> Valida la informacion ingresada en los campos
         private void ValidateDatos()
         {
             errors = 0;
 
-            if(helpers.CleanStr(TxtCode.Text.Trim()).Length == 0)
+            if (helpers.CleanStr(TxtCode.Text.Trim()).Length == 0)
             {
                 TxtCode.Focus();
                 helpers.MsgWarning("");
@@ -284,7 +278,7 @@ namespace Biblioteca.Forms.Books
                 return;
             }
 
-            if(CmbAuthor.Text == "")
+            if (CmbAuthor.Text == "")
             {
                 CmbAuthor.Focus();
                 helpers.MsgWarning("");
@@ -341,6 +335,7 @@ namespace Biblioteca.Forms.Books
             }
         }
 
+        // Metodo SetValues -> Almacenada la informacion de los campos en variables
         private void SetValues()
         {
             code = helpers.CleanStr(TxtCode.Text.Trim());
@@ -372,7 +367,7 @@ namespace Biblioteca.Forms.Books
 
             if (data.Rows.Count > 0)
             {
-                for (int i = 0;  i < data.Rows.Count; i++)
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
                     _idbook = data.Rows[i][0].ToString();
                     _book = data.Rows[i][1].ToString();
@@ -389,6 +384,7 @@ namespace Biblioteca.Forms.Books
             }
         }
 
+        // Metodo GetInfoBooks -> Muestra un registro en los campos para su edicion o eliminacion
         private void GetInfoBooks(string id)
         {
             string condition = "IDLIBRO='" + id + "'";

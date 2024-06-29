@@ -11,7 +11,7 @@ namespace Biblioteca.Forms.Authors
 
         private Clases.Repository repository = new Clases.Repository();
 
-        // Variables Globales
+        // Variables
         private string author, country, code;
 
         private int errors = 0;
@@ -239,9 +239,10 @@ namespace Biblioteca.Forms.Authors
         private void AutoGenCode()
         {
             code = "AUT" + repository.GetNext(idmodule);
-            // helpers.MsgInfo(code.ToString());
         }
 
+
+        // Metodo GetInfoAuthors -> Muestra un registro en los campos para su edicion o eliminacion
         private void GetInfoAuthors(string id)
         {
             string condition = "IDAUTOR = '" + id + "'";

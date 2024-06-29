@@ -74,6 +74,7 @@
             // TxtSearch
             // 
             this.TxtSearch.Location = new System.Drawing.Point(89, 157);
+            this.TxtSearch.MaxLength = 150;
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(561, 27);
             this.TxtSearch.TabIndex = 38;
@@ -155,6 +156,7 @@
             // TxtLimit
             // 
             this.TxtLimit.Location = new System.Drawing.Point(562, 79);
+            this.TxtLimit.MaxLength = 5;
             this.TxtLimit.Name = "TxtLimit";
             this.TxtLimit.Size = new System.Drawing.Size(121, 27);
             this.TxtLimit.TabIndex = 34;
@@ -162,6 +164,7 @@
             // TxtMembership
             // 
             this.TxtMembership.Location = new System.Drawing.Point(142, 79);
+            this.TxtMembership.MaxLength = 100;
             this.TxtMembership.Name = "TxtMembership";
             this.TxtMembership.Size = new System.Drawing.Size(290, 27);
             this.TxtMembership.TabIndex = 32;

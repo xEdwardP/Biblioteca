@@ -72,7 +72,6 @@ namespace Biblioteca.Forms.Memberships
 
                 if (helpers.MsgQuestion(Clases.Messages.MsgUpdate) == "S")
                 {
-                    //string id = code;
                     string values = "MEMBRESIA='" + memberships + "', LIMITELIB=" + limitbooks + "";
                     string condition = "IDMEMBRESIA='" + code + "'";
 
@@ -127,6 +126,7 @@ namespace Biblioteca.Forms.Memberships
             BtnSearch.Enabled = stsearch;
         }
 
+        // Metodo StateControls -> Habilita y deshabilita los controles
         private void StateControls(bool state)
         {
             TxtMembership.Enabled = state;
@@ -156,6 +156,7 @@ namespace Biblioteca.Forms.Memberships
             }
         }
 
+        // Metodo ValideData -> Valida la informacion ingresada en los campos
         private void ValideData()
         {
             errors = 0;
@@ -182,12 +183,14 @@ namespace Biblioteca.Forms.Memberships
             GetMemberships(search);
         }
 
+        // Metodo SetValues -> Almacenada la informacion de los campos en variables
         private void SetValues()
         {
             memberships = helpers.CleanStr(TxtMembership.Text.Trim());
             limitbooks = Convert.ToInt16(helpers.CleanStr(TxtLimit.Text.Trim()));
         }
 
+        // Metodo GetMemberships -> Muestra los registros en el data gried view
         private void GetMemberships(string search = "")
         {
             string condition = "", fields = "IDMEMBRESIA, MEMBRESIA, LIMITELIB";
@@ -237,9 +240,9 @@ namespace Biblioteca.Forms.Memberships
         private void AutoGenCode()
         {
             code = "MEM" + repository.GetNext(idmodule);
-            // helpers.MsgInfo(code.ToString());
         }
 
+        // Metodo GetInfoMemberships -> Muestra un registro en los campos para su edicion o eliminacion
         private void GetInfoMemberships(string id)
         {
             string condition = "IDMEMBRESIA = '" + id + "'";

@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Biblioteca.Forms
 {
     public partial class FrmHome : Form
     {
-        Clases.Helpers Helpers = new Clases.Helpers();
+        private Clases.Helpers Helpers = new Clases.Helpers();
+
         public FrmHome()
         {
             InitializeComponent();
@@ -22,28 +15,6 @@ namespace Biblioteca.Forms
         private void FrmHome_Load(object sender, EventArgs e)
         {
             SetInfoInicial();
-        }
-
-        private void BtnAuthors_Click(object sender, EventArgs e)
-        {
-            //Forms.Authors.FrmAuthors authors = new Forms.Authors.FrmAuthors();
-            var authors = new Forms.Authors.FrmAuthors();
-            authors.MdiParent = this;
-            authors.Show();
-        }
-
-        private void BtnLiteraryGenres_Click(object sender, EventArgs e)
-        {
-            var genres = new Forms.Literary_genres.FrmLiteraryGenres();
-            genres.MdiParent = this;
-            genres.Show();
-        }
-
-        private void BtnPublishers_Click(object sender, EventArgs e)
-        {
-            var publishers = new Forms.Publishing.FrmPublisher();
-            publishers.MdiParent = this;
-            publishers.Show();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -83,13 +54,6 @@ namespace Biblioteca.Forms
             employee.Show();
         }
 
-        private void BtnMemberships_Click(object sender, EventArgs e)
-        {
-            var memberships = new Forms.Memberships.FrmMemberships();
-            memberships.MdiParent = this;
-            memberships.Show();
-        }
-
         private void BtnMembers_Click(object sender, EventArgs e)
         {
             var members = new Forms.Members.FrmMembers();
@@ -102,6 +66,27 @@ namespace Biblioteca.Forms
             var loans = new Forms.Loans.FrmLoans();
             loans.MdiParent = this;
             loans.Show();
+        }
+
+        private void OptPublishers_Click(object sender, EventArgs e)
+        {
+            var publishers = new Forms.Publishing.FrmPublisher();
+            publishers.MdiParent = this;
+            publishers.Show();
+        }
+
+        private void OptBooks_Click(object sender, EventArgs e)
+        {
+            var books = new Forms.Books.FrmBooks();
+            books.MdiParent = this;
+            books.Show();
+        }
+
+        private void OptMemberhips_Click(object sender, EventArgs e)
+        {
+            var memberships = new Forms.Memberships.FrmMemberships();
+            memberships.MdiParent = this;
+            memberships.Show();
         }
     }
 }

@@ -48,12 +48,12 @@
             this.TxtPenalty = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.BtnCancel = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnClose = new System.Windows.Forms.ToolStripButton();
+            this.BtnReturnBook = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnCancel = new System.Windows.Forms.ToolStripButton();
             this.label11 = new System.Windows.Forms.Label();
             this.DtpDateApplicant = new System.Windows.Forms.DateTimePicker();
-            this.BtnReturnBook = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -215,6 +215,7 @@
             // TxtComentaryBook
             // 
             this.TxtComentaryBook.Location = new System.Drawing.Point(158, 285);
+            this.TxtComentaryBook.MaxLength = 150;
             this.TxtComentaryBook.Name = "TxtComentaryBook";
             this.TxtComentaryBook.Size = new System.Drawing.Size(521, 27);
             this.TxtComentaryBook.TabIndex = 82;
@@ -222,6 +223,7 @@
             // TxtPenalty
             // 
             this.TxtPenalty.Location = new System.Drawing.Point(158, 318);
+            this.TxtPenalty.MaxLength = 12;
             this.TxtPenalty.Name = "TxtPenalty";
             this.TxtPenalty.Size = new System.Drawing.Size(122, 27);
             this.TxtPenalty.TabIndex = 84;
@@ -250,22 +252,6 @@
             this.toolStrip1.TabIndex = 85;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // BtnCancel
-            // 
-            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancel.Image")));
-            this.BtnCancel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(94, 28);
-            this.BtnCancel.Text = "CANCELAR";
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
-            // 
             // BtnClose
             // 
             this.BtnClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -277,6 +263,33 @@
             this.BtnClose.Size = new System.Drawing.Size(68, 28);
             this.BtnClose.Text = "SALIR";
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // BtnReturnBook
+            // 
+            this.BtnReturnBook.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReturnBook.Image = ((System.Drawing.Image)(resources.GetObject("BtnReturnBook.Image")));
+            this.BtnReturnBook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnReturnBook.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnReturnBook.Name = "BtnReturnBook";
+            this.BtnReturnBook.Size = new System.Drawing.Size(169, 28);
+            this.BtnReturnBook.Text = "REALIZAR DEVOLUCION";
+            this.BtnReturnBook.Click += new System.EventHandler(this.BtnReturnBook_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancel.Image")));
+            this.BtnCancel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(94, 28);
+            this.BtnCancel.Text = "CANCELAR";
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // label11
             // 
@@ -295,17 +308,6 @@
             this.DtpDateApplicant.Name = "DtpDateApplicant";
             this.DtpDateApplicant.Size = new System.Drawing.Size(123, 27);
             this.DtpDateApplicant.TabIndex = 87;
-            // 
-            // BtnReturnBook
-            // 
-            this.BtnReturnBook.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReturnBook.Image = ((System.Drawing.Image)(resources.GetObject("BtnReturnBook.Image")));
-            this.BtnReturnBook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnReturnBook.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnReturnBook.Name = "BtnReturnBook";
-            this.BtnReturnBook.Size = new System.Drawing.Size(169, 28);
-            this.BtnReturnBook.Text = "REALIZAR DEVOLUCION";
-            this.BtnReturnBook.Click += new System.EventHandler(this.BtnReturnBook_Click);
             // 
             // FrmReturnBooks
             // 

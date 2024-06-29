@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Biblioteca.Forms.Publishing
@@ -17,9 +12,11 @@ namespace Biblioteca.Forms.Publishing
 
         private Clases.Repository repository = new Clases.Repository();
 
-        string code, publisher, adress, email, phone;
-        int errors = 0;
-        string idmodule = "EDT";
+        // Variables
+        private string code, publisher, adress, email, phone;
+
+        private int errors = 0;
+        private string idmodule = "EDT";
 
         public FrmPublisher()
         {
@@ -74,7 +71,6 @@ namespace Biblioteca.Forms.Publishing
 
                 if (helpers.MsgQuestion(Clases.Messages.MsgUpdate) == "S")
                 {
-                    //string id = code;
                     string values = "EDITORIAL='" + publisher + "',DIREDIT='" + adress + "', TELEDIT='" + phone + "', EMAILEDIT='" + email + "'";
                     string condition = "IDEDIT='" + code + "'";
 
@@ -101,7 +97,6 @@ namespace Biblioteca.Forms.Publishing
         {
             if (helpers.MsgQuestion(Clases.Messages.MsgDelete) == "S")
             {
-                // string id = code;
                 string condition = "IDEDIT='" + code + "'";
 
                 if (repository.Destroy("EDITORIALES", condition) > 0)
@@ -149,7 +144,7 @@ namespace Biblioteca.Forms.Publishing
         private void Clean()
         {
             DgvData.Rows.Clear();
-            foreach(TextBox txt in this.Controls.OfType<TextBox>())
+            foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
                 txt.Clear();
             }
@@ -162,6 +157,7 @@ namespace Biblioteca.Forms.Publishing
             // helpers.MsgInfo(code.ToString());
         }
 
+        // Metodo StartForm -> Estado por defecto del formulario
         private void StartForm()
         {
             DgvData.Refresh();
@@ -186,22 +182,23 @@ namespace Biblioteca.Forms.Publishing
             }
         }
 
+        // Metodo ValideData -> Valida la informacion ingresada en los campos
         private void ValidateData()
         {
             errors = 0;
 
-            if(helpers.CleanStr(TxtPublisher.Text.Trim()).Length == 0)
+            if (helpers.CleanStr(TxtPublisher.Text.Trim()).Length == 0)
             {
                 TxtPublisher.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL NOMBRE DE LA EDITORIAL!");
                 errors++;
                 return;
             }
 
-            if(helpers.CleanStr(TxtAdress.Text.Trim()).Length == 0)
+            if (helpers.CleanStr(TxtAdress.Text.Trim()).Length == 0)
             {
                 TxtAdress.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE LA DIRECCION DE LA EDITORIAL!");
                 errors++;
                 return;
             }
@@ -209,7 +206,7 @@ namespace Biblioteca.Forms.Publishing
             if (helpers.CleanStr(TxtEmail.Text.Trim()).Length == 0)
             {
                 TxtEmail.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL CORREO ELECTRONICO DE LA EDITORIAL!");
                 errors++;
                 return;
             }
@@ -217,12 +214,13 @@ namespace Biblioteca.Forms.Publishing
             if (helpers.CleanStr(TxtPhone.Text.Trim()).Length == 0)
             {
                 TxtPhone.Focus();
-                helpers.MsgWarning("");
+                helpers.MsgWarning("INGRESE EL NUMERO DE TELEFONO DE LA EDITORIAL!");
                 errors++;
                 return;
             }
         }
 
+        // Metodo SetValues -> Almacenada la informacion de los campos en variables
         private void SetValues()
         {
             publisher = helpers.CleanStr(TxtPublisher.Text.Trim());
@@ -262,6 +260,7 @@ namespace Biblioteca.Forms.Publishing
             }
         }
 
+        // Metodo GetInfoPublishers -> Muestra un registro en los campos para su edicion o eliminacion
         private void GetInfoPublishers(string id)
         {
             string condition = "IDEDIT='" + id + "'";

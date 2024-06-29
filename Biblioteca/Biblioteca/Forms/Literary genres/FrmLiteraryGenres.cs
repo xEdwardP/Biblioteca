@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Biblioteca.Forms.Literary_genres
@@ -18,8 +12,8 @@ namespace Biblioteca.Forms.Literary_genres
         private Clases.Repository repository = new Clases.Repository();
 
         private string code, genre;
-        int errors = 0;
-        string idmodule = "GNL";
+        private int errors = 0;
+        private string idmodule = "GNL";
 
         public FrmLiteraryGenres()
         {
@@ -45,7 +39,7 @@ namespace Biblioteca.Forms.Literary_genres
         {
             ValidateData();
 
-            if(errors == 0)
+            if (errors == 0)
             {
                 SetValues();
                 string fields = "IDGENL, GENEROLIT";
@@ -71,7 +65,6 @@ namespace Biblioteca.Forms.Literary_genres
 
                 if (helpers.MsgQuestion(Clases.Messages.MsgUpdate) == "S")
                 {
-                    //string id = code;
                     string values = "IDGENL='" + code + "', GENEROLIT='" + genre + "'";
                     string condition = "IDGENL='" + code + "'";
 
@@ -98,7 +91,6 @@ namespace Biblioteca.Forms.Literary_genres
         {
             if (helpers.MsgQuestion(Clases.Messages.MsgDelete) == "S")
             {
-                // string id = code;
                 string condition = "IDGENL='" + code + "'";
 
                 if (repository.Destroy("GENEROS_LITERARIOS", condition) > 0)
@@ -157,7 +149,6 @@ namespace Biblioteca.Forms.Literary_genres
         private void AutoGenCode()
         {
             code = "GNL" + repository.GetNext(idmodule);
-            // helpers.MsgInfo(code.ToString());
         }
 
         private void DgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -178,7 +169,7 @@ namespace Biblioteca.Forms.Literary_genres
         {
             string condition = "", fields = "IDGENL, GENEROLIT";
 
-            if(search != "")
+            if (search != "")
             {
                 condition = "AUTOR LIKE '%" + search + "%'";
             }
@@ -205,6 +196,7 @@ namespace Biblioteca.Forms.Literary_genres
             }
         }
 
+        // Metodo GetInfoLiteraryGenres -> Muestra un registro en los campos para su edicion o eliminacion
         private void GetInfoLiteraryGenres(string id)
         {
             string condition = "IDGENL='" + id + "'";
@@ -224,10 +216,10 @@ namespace Biblioteca.Forms.Literary_genres
             }
         }
 
+        // Metodo ValidateData -> Valida la informacion ingresada en los campos
         private void ValidateData()
         {
-            // SetValues();
-            if(helpers.CleanStr(TxtGenre.Text.Trim()).Length == 0)
+            if (helpers.CleanStr(TxtGenre.Text.Trim()).Length == 0)
             {
                 TxtGenre.Focus();
                 helpers.MsgWarning("");
@@ -236,6 +228,7 @@ namespace Biblioteca.Forms.Literary_genres
             }
         }
 
+        // Metodo SetValues -> Almacenada la informacion de los campos en variables
         private void SetValues()
         {
             genre = helpers.CleanStr(TxtGenre.Text.Trim());
